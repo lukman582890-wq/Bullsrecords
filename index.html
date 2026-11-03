@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bullsrecords | Studio Jasa Mixing & Mastering Audio Profesional</title>
+  <meta name="description" content="Layanan jasa Mixing & Mastering audio profesional untuk musisi, produser, dan label. Standar rilis Spotify, Apple Music, dan Vinyl.">
+  <link rel="icon" type="image/png" href="assets/favicon.png">
+  
+  <!-- Tailwind CSS CDN & Lucide Icons -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              black: '#080808',
+              card: '#111111',
+              cardHover: '#181818',
+              border: '#222222',
+              muted: '#737373',
+              light: '#f4f4f5',
+              white: '#ffffff',
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #080808;
+      color: #f4f4f5;
+    }
+    .grid-bg {
+      background-size: 32px 32px;
+      background-image: 
+        linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    }
+    .cable-glow {
+      box-shadow: 0 0 25px -5px rgba(255, 255, 255, 0.15);
+    }
+    .vinyl-spin {
+      animation: spin 20s linear infinite;
+    }
+    .vinyl-spin-paused {
+      animation-play-state: paused;
+    }
+    @keyframes spin {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body class="bg-brand-black text-brand-light font-sans antialiased selection:bg-white selection:text-black">
+
+  <!-- Header / Navigation -->
+  <header class="fixed top-0 left-0 w-full z-50 bg-[#080808]/90 backdrop-blur-md border-b border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="relative w-11 h-11 rounded-full border border-white/20 p-1 bg-black group-hover:border-white transition-all">
+          <img src="assets/logo.png" alt="Bullsrecords Logo" class="w-full h-full object-contain">
+        </div>
+        <div class="flex flex-col">
+          <span class="font-display font-bold text-lg tracking-wider text-white uppercase group-hover:text-zinc-300 transition-colors">Bullsrecords</span>
+          <span class="text-[10px] tracking-widest text-brand-muted uppercase">Audio Engineering</span>
+        </div>
+      </a>
+
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+        <a href="#samples" class="hover:text-white transition-colors">Dengar Sampel</a>
+        <a href="#services" class="hover:text-white transition-colors">Layanan & Harga</a>
+        <a href="#guidelines" class="hover:text-white transition-colors">Panduan Kirim File</a>
+        <a href="#gear" class="hover:text-white transition-colors">Gear & Tech</a>
+        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+      </nav>
+
+      <div class="flex items-center gap-4">
+        <a href="#order" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold tracking-wider uppercase rounded-full bg-white text-black hover:bg-zinc-200 transition-all transform active:scale-95 shadow-md">
+          Konsultasi / Order
+        </a>
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white" aria-label="Menu">
+          <i data-lucide="menu" class="w-6 h-6"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Nav Menu -->
+    <div id="mobile-menu" class="hidden md:hidden border-b border-brand-border bg-[#0a0a0a] px-4 pt-3 pb-6 space-y-3">
+      <a href="#samples" class="block text-zinc-300 py-2 hover:text-white">Dengar Sampel</a>
+      <a href="#services" class="block text-zinc-300 py-2 hover:text-white">Layanan & Harga</a>
+      <a href="#guidelines" class="block text-zinc-300 py-2 hover:text-white">Panduan Kirim File</a>
+      <a href="#gear" class="block text-zinc-300 py-2 hover:text-white">Gear & Tech</a>
+      <a href="#faq" class="block text-zinc-300 py-2 hover:text-white">FAQ</a>
+      <a href="#order" class="block w-full text-center py-3 text-xs font-bold tracking-wider uppercase rounded-full bg-white text-black mt-2">
+        Konsultasi / Order via WhatsApp
+      </a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden grid-bg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        
+        <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs tracking-wider uppercase text-zinc-300">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+            Online Studio • Siap Rilis Industri
+          </div>
+
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-[1.08]">
+            BRING ANALOG <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-zinc-600">
+              WARMTH & CLARITY
+            </span><br>
+            TO YOUR SOUND.
+          </h1>
+
+          <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+            Layanan Mixing & Mastering audio profesional untuk musisi independen, band, produser, dan label rekaman. Presisi vokal, balance dinamis, punchy low-end, dan standar volume rilis digital tanpa distorsi.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
+            <a href="#order" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm uppercase tracking-wider hover:bg-zinc-200 transition-all transform active:scale-95 shadow-lg">
+              <i data-lucide="message-square" class="w-4 h-4"></i>
+              Mulai Konsultasi Gratis
+            </a>
+            <a href="#samples" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-brand-border bg-black/40 text-white font-medium text-sm hover:border-white/40 transition-all">
+              <i data-lucide="play" class="w-4 h-4 fill-white"></i>
+              Dengarkan Before / After
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="grid grid-cols-3 gap-4 pt-8 border-t border-brand-border/60 max-w-lg mx-auto lg:mx-0">
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-display text-white">-14 LUFS</div>
+              <div class="text-xs text-zinc-500">Spotify & Apple Music Ready</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-display text-white">3-5 Hari</div>
+              <div class="text-xs text-zinc-500">Standar Turnaround Time</div>
+            </div>
+            <div>
+              <div class="text-xl sm:text-2xl font-bold font-display text-white">Gratis</div>
+              <div class="text-xs text-zinc-500">Hingga 3x Siklus Revisi</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Visual: Vinyl & Emblem -->
+        <div class="lg:col-span-5 flex justify-center items-center relative">
+          <div class="relative w-72 h-72 sm:w-96 sm:h-96 rounded-full border border-brand-border p-3 bg-zinc-950/80 cable-glow flex items-center justify-center">
+            
+            <!-- Vinyl Grooves -->
+            <div class="absolute inset-4 rounded-full border border-white/5 bg-[radial-gradient(circle,#161616_20%,#09090b_70%)] flex items-center justify-center">
+              <div class="absolute inset-8 rounded-full border border-white/[0.04]"></div>
+              <div class="absolute inset-16 rounded-full border border-white/[0.04]"></div>
+              <div class="absolute inset-24 rounded-full border border-white/[0.04]"></div>
+            </div>
+
+            <!-- Spinning Logo Core -->
+            <div id="vinyl-disc" class="relative z-10 w-44 h-44 sm:w-56 sm:h-56 rounded-full p-2 bg-black border border-white/20 shadow-2xl vinyl-spin">
+              <img src="assets/logo.png" alt="Bullsrecords Vinyl Center" class="w-full h-full object-contain pointer-events-none">
+            </div>
+
+            <!-- Audio Jack floating badges -->
+            <div class="absolute -bottom-3 -left-3 bg-[#111111] border border-brand-border px-4 py-2.5 rounded-2xl flex items-center gap-3 shadow-xl z-20">
+              <div class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center text-white">
+                <i data-lucide="sliders" class="w-4 h-4"></i>
+              </div>
+              <div class="text-left">
+                <div class="text-xs font-bold text-white uppercase">Analog & DSP</div>
+                <div class="text-[10px] text-zinc-400">Pristine 24-bit 96kHz Processing</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive A/B Audio Player Section -->
+  <section id="samples" class="py-24 border-t border-brand-border relative bg-zinc-950/50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Buktikan Sendiri</h2>
+        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+          PERBANDINGAN BEFORE & AFTER
+        </h3>
+        <p class="text-sm text-zinc-400 mt-3">
+          Tekan tombol di bawah saat audio berputar untuk mendengar perbandingan langsung antara audio mentah (Raw Mix) dan hasil final olahan Bullsrecords.
+        </p>
+      </div>
+
+      <!-- Player Box -->
+      <div class="rounded-3xl border border-brand-border bg-brand-card p-6 sm:p-10 shadow-2xl relative overflow-hidden">
+        
+        <!-- Track Selector Tabs -->
+        <div class="flex flex-wrap gap-2 justify-center mb-8 pb-6 border-b border-brand-border">
+          <button class="track-tab active px-4 py-2 rounded-full text-xs font-semibold bg-white text-black transition-all" data-track="0">
+            Hip-Hop / Urban Beat
+          </button>
+          <button class="track-tab px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-zinc-400 hover:text-white border border-brand-border transition-all" data-track="1">
+            Indie Rock / Band
+          </button>
+          <button class="track-tab px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-zinc-400 hover:text-white border border-brand-border transition-all" data-track="2">
+            Acoustic Pop Vocal
+          </button>
+        </div>
+
+        <!-- Track Info -->
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+          <div>
+            <div id="current-genre" class="text-xs uppercase tracking-widest text-zinc-500 font-mono">GENRE: HIP-HOP / TRAP</div>
+            <h4 id="current-title" class="text-xl sm:text-2xl font-bold text-white mt-1">Midnight Signal - Demo Session</h4>
+          </div>
+          <div class="flex items-center gap-3">
+            <span class="text-xs text-zinc-400 font-mono" id="time-display">00:00 / 00:30</span>
+          </div>
+        </div>
+
+        <!-- Visualizer Waveform Canvas -->
+        <div class="w-full h-24 bg-black/60 rounded-xl border border-brand-border p-2 mb-8 relative flex items-center justify-center overflow-hidden">
+          <canvas id="waveform-canvas" class="w-full h-full block"></canvas>
+          <div id="playback-needle" class="absolute top-0 bottom-0 left-0 w-0.5 bg-white shadow-[0_0_8px_white] pointer-events-none transition-all"></div>
+        </div>
+
+        <!-- Controls Grid -->
+        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
+          
+          <!-- Play / Pause -->
+          <div class="flex items-center gap-4">
+            <button id="play-btn" class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-zinc-200 transition-all active:scale-90 shadow-md">
+              <i data-lucide="play" id="play-icon" class="w-6 h-6 fill-black ml-0.5"></i>
+            </button>
+            <div class="text-left">
+              <div class="text-xs uppercase text-zinc-500 font-bold">Status Player</div>
+              <div id="player-status-text" class="text-sm font-semibold text-white">Siap Diputar</div>
+            </div>
+          </div>
+
+          <!-- A/B Seamless Mode Switcher -->
+          <div class="bg-black border border-brand-border p-1.5 rounded-full flex items-center w-full sm:w-auto">
+            <button id="btn-raw" class="flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-400 transition-all hover:text-white">
+              Raw Mix (Before)
+            </button>
+            <button id="btn-mastered" class="flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black transition-all shadow-lg">
+              Bullsrecords (After)
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Comparison Details Pill -->
+        <div class="mt-8 p-4 rounded-2xl bg-zinc-900/60 border border-brand-border/60 text-xs text-zinc-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+          <div class="flex items-center gap-2">
+            <i data-lucide="info" class="w-4 h-4 text-zinc-300 shrink-0"></i>
+            <span id="mode-explanation">Mode: <strong>Bullsrecords Mastered</strong> (Full Dynamic Control, Stereo Width, Harmonic Saturation & Commercial Volume).</span>
+          </div>
+          <span class="text-zinc-500 text-[11px] font-mono shrink-0">DSP Audio Engine Sim</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services & Pricing Section -->
+  <section id="services" class="py-24 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Penawaran Paket</h2>
+        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+          LAYANAN & TARIF PROFESIONAL
+        </h3>
+        <p class="text-sm text-zinc-400 mt-3">
+          Transparan, tanpa biaya tersembunyi. Termasuk revisi dan deliverable standar streaming platform.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Package 1: Stereo Mastering -->
+        <div class="rounded-3xl border border-brand-border bg-brand-card p-8 hover:border-zinc-500 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/5 border border-white/10 text-zinc-300 mb-4">
+              Stereo Track
+            </div>
+            <h4 class="text-2xl font-bold font-display text-white">Mastering Only</h4>
+            <p class="text-xs text-zinc-400 mt-2">Untuk lagu yang sudah di-mix mandiri namun butuh sentuhan akhir komersil & leveling.</p>
+            
+            <div class="my-6 py-4 border-y border-brand-border">
+              <span class="text-3xl font-extrabold text-white font-display">Rp 250.000</span>
+              <span class="text-xs text-zinc-500"> / track</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Analog EQ & Surgical Dynamic EQ
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Multi-band Compression & Glue
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                True Peak Limiting (-14 LUFS / Custom)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Format WAV 24-bit + MP3 320kbps
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                2x Siklus Revisi Gratis
+              </li>
+            </ul>
+          </div>
+
+          <a href="#order" onclick="setPackage('Mastering Only')" class="mt-8 block text-center py-3 rounded-full border border-brand-border bg-zinc-900 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all">
+            Pilih Paket Ini
+          </a>
+        </div>
+
+        <!-- Package 2: Full Mixing & Mastering (Featured) -->
+        <div class="rounded-3xl border-2 border-white bg-gradient-to-b from-[#171717] to-brand-card p-8 relative flex flex-col justify-between shadow-2xl scale-100 md:-translate-y-2 group">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-black text-[11px] font-bold uppercase tracking-wider shadow">
+            Paling Populer
+          </div>
+
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/10 border border-white/20 text-white mb-4">
+              Full Multitrack
+            </div>
+            <h4 class="text-2xl font-bold font-display text-white">Mixing & Mastering</h4>
+            <p class="text-xs text-zinc-300 mt-2">Solusi all-in-one dari audio mentah multitrack hingga lagu jadi siap rilis di seluruh DSP.</p>
+            
+            <div class="my-6 py-4 border-y border-white/20">
+              <span class="text-3xl font-extrabold text-white font-display">Rp 500.000</span>
+              <span class="text-xs text-zinc-400"> / track</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-zinc-200">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Multitrack balancing & spatial imaging
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Vocal Tuning (Melodyne/Autotune) & Alignment
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Full FX Chain (Reverbs, Delays, Saturation)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Free Stereo Mastering Included
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Dapat Master + Instrumental Master
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                3x Siklus Revisi Gratis
+              </li>
+            </ul>
+          </div>
+
+          <a href="#order" onclick="setPackage('Full Mixing & Mastering')" class="mt-8 block text-center py-3.5 rounded-full bg-white text-xs font-bold uppercase tracking-wider text-black hover:bg-zinc-200 transition-all shadow-lg">
+            Pilih Paket Lengkap
+          </a>
+        </div>
+
+        <!-- Package 3: Stem Mastering / EP -->
+        <div class="rounded-3xl border border-brand-border bg-brand-card p-8 hover:border-zinc-500 transition-all flex flex-col justify-between group">
+          <div>
+            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/5 border border-white/10 text-zinc-300 mb-4">
+              Sub-Mix Stems
+            </div>
+            <h4 class="text-2xl font-bold font-display text-white">Stem Mastering</h4>
+            <p class="text-xs text-zinc-400 mt-2">Mastering dengan kontrol terpisah untuk 4-8 group stem (Drums, Bass, Synths, Vocals).</p>
+            
+            <div class="my-6 py-4 border-y border-brand-border">
+              <span class="text-3xl font-extrabold text-white font-display">Rp 350.000</span>
+              <span class="text-xs text-zinc-500"> / track</span>
+            </div>
+
+            <ul class="space-y-3 text-xs text-zinc-300">
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Independent stems processing (maks 8 stems)
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Pemisahan vocal-to-beat yang lebih bersih
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Analog summing vibe & saturation
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                Format WAV 24-bit + 16-bit Streaming
+              </li>
+              <li class="flex items-center gap-2.5">
+                <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
+                2x Siklus Revisi Gratis
+              </li>
+            </ul>
+          </div>
+
+          <a href="#order" onclick="setPackage('Stem Mastering')" class="mt-8 block text-center py-3 rounded-full border border-brand-border bg-zinc-900 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all">
+            Pilih Paket Ini
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-12 text-center text-xs text-zinc-400">
+        Punya project Album / EP (lebih dari 3 lagu)? <a href="#order" class="underline text-white font-semibold">Hubungi kami untuk penawaran diskon paket album.</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Audio Submission Guidelines -->
+  <section id="guidelines" class="py-24 border-t border-brand-border bg-zinc-950/40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Checklist Sebelum Kirim</h2>
+        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+          PANDUAN SUBMISSION FILE
+        </h3>
+        <p class="text-sm text-zinc-400 mt-3">
+          Ikuti pedoman ini agar hasil pengerjaan audio di Bullsrecords maksimal dan bebas distorsi.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        
+        <div class="p-6 rounded-2xl border border-brand-border bg-brand-card space-y-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
+            <span class="font-mono font-bold text-sm">01</span>
+          </div>
+          <h4 class="text-base font-bold text-white">Format & Sample Rate</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Ekspor file dalam format <strong>WAV 24-bit</strong> (atau minimal 16-bit). Jangan kirim file MP3 jika memungkinkan. Gunakan sample rate proyek asli Anda (44.1 kHz, 48 kHz, atau 96 kHz).
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-brand-border bg-brand-card space-y-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
+            <span class="font-mono font-bold text-sm">02</span>
+          </div>
+          <h4 class="text-base font-bold text-white">Headroom (Untuk Mastering)</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Pastikan peak audio berada di antara <strong>-6 dBFS hingga -3 dBFS</strong>. Matikan limiter, maximizer, atau clipper pada Master Fader sebelum render file.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-brand-border bg-brand-card space-y-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
+            <span class="font-mono font-bold text-sm">03</span>
+          </div>
+          <h4 class="text-base font-bold text-white">Sinkronisasi Multitrack (0:00)</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Semua stems/track audio wajib di-render dari titik awal yang sama (<strong>waktu 0:00</strong>) agar saat diimpor ke DAW kami, semua instrumen dan vokal tetap sinkron sempurna.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl border border-brand-border bg-brand-card space-y-3">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
+            <span class="font-mono font-bold text-sm">04</span>
+          </div>
+          <h4 class="text-base font-bold text-white">Track Vokal & Lagu Referensi</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed">
+            Kirimkan track vokal kering (Dry tanpa delay/reverb). Sertakan juga 1-2 lagu referensi komersil yang Anda suka agar teknisi kami paham arah karakter suara yang Anda inginkan.
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Gear & Plugins Showcase -->
+  <section id="gear" class="py-20 border-t border-brand-border">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Studio Setup</h2>
+        <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white">
+          ARSENAL TOOLS & TEKNOLOGI
+        </h3>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 text-center">
+        <div class="p-4 rounded-xl border border-brand-border bg-brand-card">
+          <div class="text-sm font-bold text-white">Pro Tools / Reaper</div>
+          <div class="text-[10px] text-zinc-500 mt-1">DAW Core System</div>
+        </div>
+        <div class="p-4 rounded-xl border border-brand-border bg-brand-card">
+          <div class="text-sm font-bold text-white">FabFilter Bundle</div>
+          <div class="text-[10px] text-zinc-500 mt-1">Pro-Q3, Pro-C2, Pro-L2</div>
+        </div>
+        <div class="p-4 rounded-xl border border-brand-border bg-brand-card">
+          <div class="text-sm font-bold text-white">Universal Audio</div>
+          <div class="text-[10px] text-zinc-500 mt-1">1176, LA-2A, Pultec DSP</div>
+        </div>
+        <div class="p-4 rounded-xl border border-brand-border bg-brand-card">
+          <div class="text-sm font-bold text-white">iZotope Ozone</div>
+          <div class="text-[10px] text-zinc-500 mt-1">Advanced Mastering Suite</div>
+        </div>
+        <div class="p-4 rounded-xl border border-brand-border bg-brand-card">
+          <div class="text-sm font-bold text-white">Celemony Melodyne</div>
+          <div class="text-[10px] text-zinc-500 mt-1">Surgical Vocal Tuning</div>
+        </div>
+        <div class="p-4 rounded-xl border border-brand-border bg-brand-card">
+          <div class="text-sm font-bold text-white">Soundtoys / SSL</div>
+          <div class="text-[10px] text-zinc-500 mt-1">Analog Console Flavor</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- WhatsApp Order Form Generator -->
+  <section id="order" class="py-24 border-t border-brand-border bg-zinc-950/60">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-12">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Mulai Sekarang</h2>
+        <h3 class="text-3xl font-display font-extrabold text-white">
+          FORMULIR PEMESANAN AUDIO
+        </h3>
+        <p class="text-xs text-zinc-400 mt-2">
+          Isi detail singkat project Anda di bawah. Klik kirim dan pesan akan otomatis terbuka di WhatsApp kami.
+        </p>
+      </div>
+
+      <form id="order-form" class="space-y-5 rounded-3xl border border-brand-border bg-brand-card p-6 sm:p-10 shadow-2xl">
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Nama / Artis / Band</label>
+            <input type="text" id="form-name" required placeholder="Contoh: Dave / The Sounds" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Judul Lagu</label>
+            <input type="text" id="form-title" required placeholder="Contoh: Midnight Memories" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+          </div>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Pilihan Paket Jasa</label>
+            <select id="form-package" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+              <option value="Full Mixing & Mastering">Full Mixing & Mastering (Rp 500.000)</option>
+              <option value="Mastering Only">Mastering Only (Rp 250.000)</option>
+              <option value="Stem Mastering">Stem Mastering (Rp 350.000)</option>
+              <option value="Album / EP Package">Custom Package (Album / EP)</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Genre / Style Musik</label>
+            <input type="text" id="form-genre" placeholder="Contoh: Hip Hop, Pop Punk, R&B" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Link File Audio (Google Drive / Dropbox / WeTransfer)</label>
+          <input type="url" id="form-link" placeholder="https://drive.google.com/..." class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+          <p class="text-[11px] text-zinc-500 mt-1">Pastikan link Google Drive sudah diatur ke 'Anyone with the link / Siapa saja memiliki link'.</p>
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Catatan Tambahan & Lagu Referensi (Opsional)</label>
+          <textarea id="form-notes" rows="3" placeholder="Ingin vokal tebal seperti artis X, snare punchy, referensi lagu: ..." class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white"></textarea>
+        </div>
+
+        <button type="submit" class="w-full py-4 rounded-full bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-lg">
+          <i data-lucide="send" class="w-4 h-4"></i>
+          Kirim Pesan ke WhatsApp Bullsrecords
+        </button>
+
+      </form>
+
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="py-24 border-t border-brand-border">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-xl mx-auto mb-14">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Tanya Jawab</h2>
+        <h3 class="text-3xl font-display font-extrabold text-white">
+          FREQUENTLY ASKED QUESTIONS
+        </h3>
+      </div>
+
+      <div class="space-y-4">
+        
+        <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
+          <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+            Berapa lama waktu pengerjaan (turnaround time)?
+            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+            Untuk mastering single biasanya selesai dalam 1-2 hari kerja. Untuk full mixing & mastering single berkisar 3-5 hari kerja tergantung jumlah track multitrack.
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
+          <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+            Bagaimana jika hasil belum sesuai ekspektasi saya?
+            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+            Setiap paket sudah mencakup revisi gratis (2-3 kali revisi). Anda cukup menuliskan timecode (misal: "di menit 01:23 vokal backing agak terlalu keras") dan kami akan perbaiki segera.
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
+          <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+            File apa saja yang saya dapatkan setelah selesai?
+            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+            Anda akan mendapatkan folder zip berisi: High-Resolution Master (WAV 24-bit 48kHz/96kHz), Streaming Ready Master (WAV 16-bit 44.1kHz -14 LUFS), MP3 320kbps, dan Instrumental Master (untuk live performance / backing track).
+          </p>
+        </details>
+
+        <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
+          <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
+            Metode pembayaran apa saja yang diterima?
+            <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
+          </summary>
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+            Menerima Transfer Bank (BCA, Mandiri), QRIS (GoPay, OVO, ShopeePay, Dana), dan PayPal untuk klien internasional.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-brand-border bg-black py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6">
+      
+      <div class="flex items-center gap-3">
+        <div class="w-8 h-8 rounded-full border border-white/20 p-1 bg-black">
+          <img src="assets/logo.png" alt="Bullsrecords Logo" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span class="font-display font-bold text-sm tracking-wider text-white uppercase">Bullsrecords</span>
+          <p class="text-[10px] text-zinc-500">Audio Mixing & Mastering Studio</p>
+        </div>
+      </div>
+
+      <div class="text-xs text-zinc-500 text-center sm:text-left">
+        &copy; <span id="year"></span> Bullsrecords. All rights reserved.
+      </div>
+
+      <div class="flex items-center gap-4 text-zinc-400">
+        <a href="https://github.com/lukman582890-wq/bullsrecords-web" target="_blank" rel="noopener" class="hover:text-white transition-colors" title="GitHub Repo">
+          <i data-lucide="github" class="w-4 h-4"></i>
+        </a>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts: Lucide, Audio Engine Sim, Form Handler -->
+  <script>
+    lucide.createIcons();
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Mobile Menu Toggle
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Helper to select package from cards
+    function setPackage(pkgName) {
+      const select = document.getElementById('form-package');
+      for (let i = 0; i < select.options.length; i++) {
+        if (select.options[i].value === pkgName) {
+          select.selectedIndex = i;
+          break;
+        }
+      }
+    }
+
+    // WhatsApp Form Generator
+    const orderForm = document.getElementById('order-form');
+    orderForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('form-name').value;
+      const title = document.getElementById('form-title').value;
+      const pkg = document.getElementById('form-package').value;
+      const genre = document.getElementById('form-genre').value || '-';
+      const link = document.getElementById('form-link').value || '-';
+      const notes = document.getElementById('form-notes').value || '-';
+
+      const message = `Halo Bullsrecords! Saya mau pesan jasa audio:%0A%0A` +
+        `*Nama/Artis:* ${encodeURIComponent(name)}%0A` +
+        `*Judul Lagu:* ${encodeURIComponent(title)}%0A` +
+        `*Paket Layanan:* ${encodeURIComponent(pkg)}%0A` +
+        `*Genre:* ${encodeURIComponent(genre)}%0A` +
+        `*Link File:* ${encodeURIComponent(link)}%0A` +
+        `*Catatan:* ${encodeURIComponent(notes)}%0A%0A` +
+        `Mohon info estimasi dan langkah selanjutnya. Terima kasih!`;
+
+      // Default nomor WA (dapat disesuaikan)
+      const waNumber = '6281234567890';
+      window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
+    });
+
+    // ==========================================
+    // Interactive Web Audio DSP Simulator Engine
+    // (Generates real sound + demonstrates A/B comparison without requiring external mp3 files!)
+    // ==========================================
+
+    const tracksData = [
+      {
+        genre: "GENRE: HIP-HOP / TRAP",
+        title: "Midnight Signal - Demo Session",
+        tempo: 130,
+        type: 'trap'
+      },
+      {
+        genre: "GENRE: INDIE ROCK / BAND",
+        title: "Neon Horizon - Band Demo",
+        tempo: 120,
+        type: 'rock'
+      },
+      {
+        genre: "GENRE: ACOUSTIC POP VOCAL",
+        title: "Echoes of You - Acoustic Live",
+        tempo: 95,
+        type: 'acoustic'
+      }
+    ];
+
+    let currentTrackIdx = 0;
+    let isPlaying = false;
+    let isMasteredMode = true; // true = Mastered (After), false = Raw (Before)
+    let audioCtx = null;
+    let masterGain = null;
+    let filterNode = null;
+    let compNode = null;
+    let animId = null;
+    let trackPosition = 0;
+    const trackDuration = 30; // 30 seconds loop
+    let playInterval = null;
+
+    const playBtn = document.getElementById('play-btn');
+    const playIcon = document.getElementById('play-icon');
+    const playerStatusText = document.getElementById('player-status-text');
+    const btnRaw = document.getElementById('btn-raw');
+    const btnMastered = document.getElementById('btn-mastered');
+    const modeExplanation = document.getElementById('mode-explanation');
+    const timeDisplay = document.getElementById('time-display');
+    const needle = document.getElementById('playback-needle');
+    const vinylDisc = document.getElementById('vinyl-disc');
+
+    // Visualizer Canvas setup
+    const canvas = document.getElementById('waveform-canvas');
+    const ctx = canvas.getContext('2d');
+    function resizeCanvas() {
+      canvas.width = canvas.parentElement.clientWidth;
+      canvas.height = canvas.parentElement.clientHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    function initAudio() {
+      if (!audioCtx) {
+        const AudioContext = window.AudioContext || window.webkitAudioContext;
+        audioCtx = new AudioContext();
+      }
+      if (audioCtx.state === 'suspended') {
+        audioCtx.resume();
+      }
+    }
+
+    // Synthesizer Loop Generator to create dynamic soundscape
+    let synthLoopTimer = null;
+    function scheduleBeat() {
+      if (!isPlaying || !audioCtx) return;
+
+      const track = tracksData[currentTrackIdx];
+      const now = audioCtx.currentTime;
+
+      // Base Kick / Sub
+      const osc = audioCtx.createOscillator();
+      const gain = audioCtx.createGain();
+      
+      if (isMasteredMode) {
+        // Punchy, deep, full
+        osc.frequency.setValueAtTime(140, now);
+        osc.frequency.exponentialRampToValueAtTime(35, now + 0.18);
+        gain.gain.setValueAtTime(0.7, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
+      } else {
+        // Raw, muddy, weak sub
+        osc.frequency.setValueAtTime(110, now);
+        osc.frequency.exponentialRampToValueAtTime(55, now + 0.15);
+        gain.gain.setValueAtTime(0.35, now);
+        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
+      }
+
+      osc.connect(gain);
+      gain.connect(audioCtx.destination);
+      osc.start(now);
+      osc.stop(now + 0.4);
+
+      // Snare / Click on alternate beats
+      if (Math.floor(trackPosition * 2) % 2 === 1) {
+        const snareOsc = audioCtx.createOscillator();
+        const snareGain = audioCtx.createGain();
+        snareOsc.type = isMasteredMode ? 'triangle' : 'sine';
+        snareOsc.frequency.setValueAtTime(isMasteredMode ? 280 : 180, now);
+        snareGain.gain.setValueAtTime(isMasteredMode ? 0.25 : 0.1, now);
+        snareGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
+
+        snareOsc.connect(snareGain);
+        snareGain.connect(audioCtx.destination);
+        snareOsc.start(now);
+        snareOsc.stop(now + 0.2);
+      }
+
+      const beatInterval = (60 / track.tempo) * 1000 / 2;
+      synthLoopTimer = setTimeout(scheduleBeat, beatInterval);
+    }
+
+    function drawWaveform() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      const bars = 64;
+      const barWidth = canvas.width / bars;
+      const centerY = canvas.height / 2;
+
+      for (let i = 0; i < bars; i++) {
+        let heightMultiplier = Math.sin((i / 8) + (trackPosition * 4)) * 0.5 + 0.5;
+        if (!isPlaying) heightMultiplier = Math.sin(i / 5) * 0.3 + 0.1;
+
+        // Mastered has wider dynamic peaks and crisp loudness
+        const h = isMasteredMode ? heightMultiplier * (canvas.height * 0.75) : heightMultiplier * (canvas.height * 0.38);
+
+        ctx.fillStyle = isMasteredMode 
+          ? (i % 2 === 0 ? '#ffffff' : '#a1a1aa') 
+          : (i % 2 === 0 ? '#52525b' : '#3f3f46');
+
+        ctx.fillRect(i * barWidth + 2, centerY - h / 2, barWidth - 4, h);
+      }
+
+      if (isPlaying) {
+        animId = requestAnimationFrame(drawWaveform);
+      }
+    }
+    drawWaveform();
+
+    function updateModeUI() {
+      if (isMasteredMode) {
+        btnMastered.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black transition-all shadow-lg";
+        btnRaw.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-400 transition-all hover:text-white";
+        modeExplanation.innerHTML = `Mode: <strong class="text-white">Bullsrecords Mastered</strong> (Full Dynamic Control, Stereo Width, Harmonic Saturation & Commercial Volume).`;
+      } else {
+        btnRaw.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-zinc-700 text-white transition-all shadow-lg";
+        btnMastered.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-400 transition-all hover:text-white";
+        modeExplanation.innerHTML = `Mode: <strong class="text-zinc-300">Raw Mix (Before)</strong> (Unprocessed, muddy low-end, peak clashing, volume belum seimbang).`;
+      }
+      drawWaveform();
+    }
+
+    btnRaw.addEventListener('click', () => {
+      isMasteredMode = false;
+      updateModeUI();
+    });
+
+    btnMastered.addEventListener('click', () => {
+      isMasteredMode = true;
+      updateModeUI();
+    });
+
+    function togglePlayback() {
+      initAudio();
+      isPlaying = !isPlaying;
+
+      if (isPlaying) {
+        playIcon.setAttribute('data-lucide', 'pause');
+        playerStatusText.textContent = 'Sedang Diputar';
+        vinylDisc.classList.remove('vinyl-spin-paused');
+        scheduleBeat();
+        drawWaveform();
+
+        playInterval = setInterval(() => {
+          trackPosition = (trackPosition + 0.1) % trackDuration;
+          const pct = (trackPosition / trackDuration) * 100;
+          needle.style.left = `${pct}%`;
+          
+          const curMin = String(Math.floor(trackPosition / 60)).padStart(2, '0');
+          const curSec = String(Math.floor(trackPosition % 60)).padStart(2, '0');
+          timeDisplay.textContent = `${curMin}:${curSec} / 00:30`;
+        }, 100);
+
+      } else {
+        playIcon.setAttribute('data-lucide', 'play');
+        playerStatusText.textContent = 'Dijeda';
+        vinylDisc.classList.add('vinyl-spin-paused');
+        clearTimeout(synthLoopTimer);
+        clearInterval(playInterval);
+      }
+      lucide.createIcons();
+    }
+
+    playBtn.addEventListener('click', togglePlayback);
+
+    // Switch Tracks Tabs
+    const trackTabs = document.querySelectorAll('.track-tab');
+    trackTabs.forEach(tab => {
+      tab.addEventListener('click', () => {
+        trackTabs.forEach(t => {
+          t.className = "track-tab px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-zinc-400 hover:text-white border border-brand-border transition-all";
+        });
+        tab.className = "track-tab active px-4 py-2 rounded-full text-xs font-semibold bg-white text-black transition-all";
+        
+        currentTrackIdx = parseInt(tab.dataset.track, 10);
+        const data = tracksData[currentTrackIdx];
+        document.getElementById('current-genre').textContent = data.genre;
+        document.getElementById('current-title').textContent = data.title;
+        
+        // Reset position
+        trackPosition = 0;
+        needle.style.left = '0%';
+        timeDisplay.textContent = '00:00 / 00:30';
+      });
+    });
+
+  </script>
+</body>
+</html>

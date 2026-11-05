@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bullsrecords | Studio Jasa Mixing & Mastering Audio Profesional</title>
-  <meta name="description" content="Layanan jasa Mixing & Mastering audio profesional untuk musisi, produser, dan label. Standar rilis Spotify, Apple Music, dan Vinyl.">
+  <title id="page-title">Bullsrecords | Studio Jasa Mixing & Mastering Audio Profesional</title>
+  <meta name="description" id="meta-description" content="Layanan jasa Mixing & Mastering audio profesional untuk musisi, produser, dan label. Standar rilis Spotify, Apple Music, dan Vinyl.">
   <link rel="icon" type="image/png" href="assets/favicon.png">
   
   <!-- Tailwind CSS CDN & Lucide Icons -->
@@ -81,17 +81,28 @@
       </a>
 
       <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
-        <a href="#portfolio" class="hover:text-white transition-colors">Portofolio</a>
-        <a href="#services" class="hover:text-white transition-colors">Layanan & Harga</a>
-        <a href="#guidelines" class="hover:text-white transition-colors">Panduan Kirim File</a>
-        <a href="#gear" class="hover:text-white transition-colors">Gear & Tech</a>
-        <a href="#faq" class="hover:text-white transition-colors">FAQ</a>
+        <a href="#portfolio" class="hover:text-white transition-colors" data-i18n="nav_portfolio">Portofolio</a>
+        <a href="#services" class="hover:text-white transition-colors" data-i18n="nav_services">Layanan & Harga</a>
+        <a href="#guidelines" class="hover:text-white transition-colors" data-i18n="nav_guidelines">Panduan Kirim File</a>
+        <a href="#gear" class="hover:text-white transition-colors" data-i18n="nav_gear">Gear & Tech</a>
+        <a href="#faq" class="hover:text-white transition-colors" data-i18n="nav_faq">FAQ</a>
       </nav>
 
-      <div class="flex items-center gap-4">
-        <a href="#order" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold tracking-wider uppercase rounded-full bg-white text-black hover:bg-zinc-200 transition-all transform active:scale-95 shadow-md">
+      <div class="flex items-center gap-3 sm:gap-4">
+        <!-- Language Switcher Pill -->
+        <div class="inline-flex items-center bg-zinc-900 border border-brand-border rounded-full p-0.5 text-xs">
+          <button type="button" id="lang-btn-id" onclick="setLanguage('id', true)" class="px-2.5 py-1 rounded-full text-xs font-bold transition-all bg-white text-black shadow-sm" title="Bahasa Indonesia">
+            ID
+          </button>
+          <button type="button" id="lang-btn-en" onclick="setLanguage('en', true)" class="px-2.5 py-1 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white" title="English">
+            EN
+          </button>
+        </div>
+
+        <a href="#order" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 text-xs font-bold tracking-wider uppercase rounded-full bg-white text-black hover:bg-zinc-200 transition-all transform active:scale-95 shadow-md" data-i18n="nav_cta">
           Konsultasi / Order
         </a>
+
         <button id="mobile-menu-btn" class="md:hidden p-2 text-zinc-400 hover:text-white" aria-label="Menu">
           <i data-lucide="menu" class="w-6 h-6"></i>
         </button>
@@ -100,12 +111,22 @@
 
     <!-- Mobile Nav Menu -->
     <div id="mobile-menu" class="hidden md:hidden border-b border-brand-border bg-[#0a0a0a] px-4 pt-3 pb-6 space-y-3">
-      <a href="#portfolio" class="block text-zinc-300 py-2 hover:text-white">Portofolio</a>
-      <a href="#services" class="block text-zinc-300 py-2 hover:text-white">Layanan & Harga</a>
-      <a href="#guidelines" class="block text-zinc-300 py-2 hover:text-white">Panduan Kirim File</a>
-      <a href="#gear" class="block text-zinc-300 py-2 hover:text-white">Gear & Tech</a>
-      <a href="#faq" class="block text-zinc-300 py-2 hover:text-white">FAQ</a>
-      <a href="#order" class="block w-full text-center py-3 text-xs font-bold tracking-wider uppercase rounded-full bg-white text-black mt-2">
+      <a href="#portfolio" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_portfolio">Portofolio</a>
+      <a href="#services" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_services">Layanan & Harga</a>
+      <a href="#guidelines" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_guidelines">Panduan Kirim File</a>
+      <a href="#gear" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_gear">Gear & Tech</a>
+      <a href="#faq" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_faq">FAQ</a>
+      
+      <!-- Mobile Language Switcher Row -->
+      <div class="flex items-center justify-between py-2 border-t border-brand-border/60 pt-3">
+        <span class="text-xs text-zinc-400 font-medium" data-i18n="mobile_lang_label">Bahasa / Language:</span>
+        <div class="inline-flex items-center bg-zinc-900 border border-brand-border rounded-full p-0.5 text-xs">
+          <button type="button" id="mobile-lang-btn-id" onclick="setLanguage('id', true)" class="px-3 py-1 rounded-full text-xs font-bold transition-all bg-white text-black">ID</button>
+          <button type="button" id="mobile-lang-btn-en" onclick="setLanguage('en', true)" class="px-3 py-1 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white">EN</button>
+        </div>
+      </div>
+
+      <a href="#order" class="block w-full text-center py-3 text-xs font-bold tracking-wider uppercase rounded-full bg-white text-black mt-2" data-i18n="nav_cta_mobile">
         Konsultasi / Order via WhatsApp
       </a>
     </div>
@@ -119,7 +140,7 @@
         <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-white/10 bg-white/5 text-xs tracking-wider uppercase text-zinc-300">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-            Online Studio • Siap Rilis Industri
+            <span data-i18n="hero_badge">Online Studio • Siap Rilis Industri</span>
           </div>
 
           <h1 class="text-4xl sm:text-6xl lg:text-7xl font-display font-extrabold tracking-tight text-white leading-[1.08]">
@@ -130,18 +151,18 @@
             TO YOUR SOUND.
           </h1>
 
-          <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+          <p class="text-base sm:text-lg text-zinc-400 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal" data-i18n="hero_subheadline">
             Layanan Mixing & Mastering audio profesional untuk musisi independen, band, produser, dan label rekaman. Presisi vokal, balance dinamis, punchy low-end, dan standar volume rilis digital tanpa distorsi.
           </p>
 
           <div class="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-3">
             <a href="#order" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full bg-white text-black font-semibold text-sm uppercase tracking-wider hover:bg-zinc-200 transition-all transform active:scale-95 shadow-lg">
               <i data-lucide="message-square" class="w-4 h-4"></i>
-              Mulai Konsultasi Gratis
+              <span data-i18n="hero_cta_consult">Mulai Konsultasi Gratis</span>
             </a>
             <a href="#portfolio" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-4 rounded-full border border-brand-border bg-black/40 text-white font-medium text-sm hover:border-white/40 transition-all">
               <svg class="w-4 h-4 fill-[#1DB954]" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-              Portofolio Spotify
+              <span data-i18n="hero_cta_spotify">Portofolio Spotify</span>
             </a>
           </div>
 
@@ -149,15 +170,15 @@
           <div class="grid grid-cols-3 gap-4 pt-8 border-t border-brand-border/60 max-w-lg mx-auto lg:mx-0">
             <div>
               <div class="text-xl sm:text-2xl font-bold font-display text-white">-14 LUFS</div>
-              <div class="text-xs text-zinc-500">Spotify & Apple Music Ready</div>
+              <div class="text-xs text-zinc-500" data-i18n="trust_spotify">Spotify & Apple Music Ready</div>
             </div>
             <div>
-              <div class="text-xl sm:text-2xl font-bold font-display text-white">3-5 Hari</div>
-              <div class="text-xs text-zinc-500">Standar Turnaround Time</div>
+              <div class="text-xl sm:text-2xl font-bold font-display text-white" data-i18n="trust_turnaround_val">3-5 Hari</div>
+              <div class="text-xs text-zinc-500" data-i18n="trust_turnaround">Standar Turnaround Time</div>
             </div>
             <div>
-              <div class="text-xl sm:text-2xl font-bold font-display text-white">Gratis</div>
-              <div class="text-xs text-zinc-500">Hingga 3x Siklus Revisi</div>
+              <div class="text-xl sm:text-2xl font-bold font-display text-white" data-i18n="trust_revisions_val">Gratis</div>
+              <div class="text-xs text-zinc-500" data-i18n="trust_revisions">Hingga 3x Siklus Revisi</div>
             </div>
           </div>
         </div>
@@ -203,19 +224,19 @@
         <div>
           <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-wider text-emerald-400 mb-3">
             <svg class="w-3.5 h-3.5 fill-[#1DB954]" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            Official Discography
+            <span data-i18n="portfolio_badge">Official Discography</span>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white">
+          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white" data-i18n="portfolio_title">
             PORTOFOLIO SPOTIFY
           </h2>
-          <p class="text-sm text-zinc-400 mt-2 max-w-xl">
+          <p class="text-sm text-zinc-400 mt-2 max-w-xl" data-i18n="portfolio_desc">
             Karya dan rilisan resmi yang telah melalui proses mixing & mastering profesional di Bullsrecords. Putar langsung dari playlist Spotify di bawah.
           </p>
         </div>
 
         <a href="https://open.spotify.com/playlist/5ZaratnXq1OY4j2BX5bkaq?si=5gZwUDRcQtuPo-6_Vd4iKg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#1DB954] text-black font-bold text-xs uppercase tracking-wider hover:bg-[#1ed760] transition-all transform active:scale-95 shadow-lg w-fit">
           <svg class="w-4 h-4 fill-black" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          Buka di Aplikasi Spotify
+          <span data-i18n="portfolio_btn">Buka di Aplikasi Spotify</span>
         </a>
       </div>
 
@@ -236,7 +257,7 @@
 
       <div class="mt-10">
         <div class="mb-5">
-          <p class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Video Portofolio</p>
+          <p class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="portfolio_video_badge">Video Portofolio</p>
           <h3 class="text-xl sm:text-2xl font-display font-bold text-white">DeadSquad - “Horror Vision” Live in Taiwan</h3>
         </div>
         <div class="relative w-full overflow-hidden rounded-3xl border border-brand-border bg-black shadow-2xl" style="aspect-ratio: 16 / 9;">
@@ -255,104 +276,16 @@
     </div>
   </section>
 
-  <!-- Interactive A/B Audio Player Section (Disabled)
-  <section id="samples" class="py-24 border-t border-brand-border relative bg-zinc-950/50">
-    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-      
-      <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Buktikan Sendiri</h2>
-        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
-          PERBANDINGAN BEFORE & AFTER
-        </h3>
-        <p class="text-sm text-zinc-400 mt-3">
-          Tekan tombol di bawah saat audio berputar untuk mendengar perbandingan langsung antara audio mentah (Raw Mix) dan hasil final olahan Bullsrecords.
-        </p>
-      </div>
-
-      <!-- Player Box -->
-      <div class="rounded-3xl border border-brand-border bg-brand-card p-6 sm:p-10 shadow-2xl relative overflow-hidden">
-        
-        <!-- Track Selector Tabs -->
-        <div class="flex flex-wrap gap-2 justify-center mb-8 pb-6 border-b border-brand-border">
-          <button class="track-tab active px-4 py-2 rounded-full text-xs font-semibold bg-white text-black transition-all" data-track="0">
-            Hip-Hop / Urban Beat
-          </button>
-          <button class="track-tab px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-zinc-400 hover:text-white border border-brand-border transition-all" data-track="1">
-            Indie Rock / Band
-          </button>
-          <button class="track-tab px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-zinc-400 hover:text-white border border-brand-border transition-all" data-track="2">
-            Acoustic Pop Vocal
-          </button>
-        </div>
-
-        <!-- Track Info -->
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
-          <div>
-            <div id="current-genre" class="text-xs uppercase tracking-widest text-zinc-500 font-mono">GENRE: HIP-HOP / TRAP</div>
-            <h4 id="current-title" class="text-xl sm:text-2xl font-bold text-white mt-1">Midnight Signal - Demo Session</h4>
-          </div>
-          <div class="flex items-center gap-3">
-            <span class="text-xs text-zinc-400 font-mono" id="time-display">00:00 / 00:30</span>
-          </div>
-        </div>
-
-        <!-- Visualizer Waveform Canvas -->
-        <div class="w-full h-24 bg-black/60 rounded-xl border border-brand-border p-2 mb-8 relative flex items-center justify-center overflow-hidden">
-          <canvas id="waveform-canvas" class="w-full h-full block"></canvas>
-          <div id="playback-needle" class="absolute top-0 bottom-0 left-0 w-0.5 bg-white shadow-[0_0_8px_white] pointer-events-none transition-all"></div>
-        </div>
-
-        <!-- Controls Grid -->
-        <div class="flex flex-col sm:flex-row items-center justify-between gap-6">
-          
-          <!-- Play / Pause -->
-          <div class="flex items-center gap-4">
-            <button id="play-btn" class="w-14 h-14 rounded-full bg-white text-black flex items-center justify-center hover:bg-zinc-200 transition-all active:scale-90 shadow-md">
-              <i data-lucide="play" id="play-icon" class="w-6 h-6 fill-black ml-0.5"></i>
-            </button>
-            <div class="text-left">
-              <div class="text-xs uppercase text-zinc-500 font-bold">Status Player</div>
-              <div id="player-status-text" class="text-sm font-semibold text-white">Siap Diputar</div>
-            </div>
-          </div>
-
-          <!-- A/B Seamless Mode Switcher -->
-          <div class="bg-black border border-brand-border p-1.5 rounded-full flex items-center w-full sm:w-auto">
-            <button id="btn-raw" class="flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-400 transition-all hover:text-white">
-              Raw Mix (Before)
-            </button>
-            <button id="btn-mastered" class="flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black transition-all shadow-lg">
-              Bullsrecords (After)
-            </button>
-          </div>
-
-        </div>
-
-        <!-- Comparison Details Pill -->
-        <div class="mt-8 p-4 rounded-2xl bg-zinc-900/60 border border-brand-border/60 text-xs text-zinc-400 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
-          <div class="flex items-center gap-2">
-            <i data-lucide="info" class="w-4 h-4 text-zinc-300 shrink-0"></i>
-            <span id="mode-explanation">Mode: <strong>Bullsrecords Mastered</strong> (Full Dynamic Control, Stereo Width, Harmonic Saturation & Commercial Volume).</span>
-          </div>
-          <span class="text-zinc-500 text-[11px] font-mono shrink-0">DSP Audio Engine Sim</span>
-        </div>
-
-      </div>
-
-    </div>
-  </section>
-  -->
-
   <!-- Services & Pricing Section -->
   <section id="services" class="py-24 border-t border-brand-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-16">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Penawaran Paket</h2>
-        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="services_badge">Penawaran Paket</h2>
+        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white" data-i18n="services_title">
           LAYANAN & TARIF PROFESIONAL
         </h3>
-        <p class="text-sm text-zinc-400 mt-3">
+        <p class="text-sm text-zinc-400 mt-3" data-i18n="services_desc">
           Transparan, tanpa biaya tersembunyi. Termasuk revisi dan deliverable standar streaming platform.
         </p>
       </div>
@@ -362,108 +295,108 @@
         <!-- Package 1: Mastering Only -->
         <div class="rounded-3xl border border-brand-border bg-brand-card p-8 sm:p-10 hover:border-zinc-500 transition-all flex flex-col justify-between group">
           <div>
-            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/5 border border-white/10 text-zinc-300 mb-4">
+            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/5 border border-white/10 text-zinc-300 mb-4" data-i18n="pkg_mastering_tier">
               Stereo Master
             </div>
-            <h4 class="text-2xl sm:text-3xl font-bold font-display text-white">Mastering Only</h4>
-            <p class="text-xs sm:text-sm text-zinc-400 mt-2">Untuk track yang sudah selesai di-mix mandiri namun butuh sentuhan akhir komersil, kohesi spektral, dan volume standar platform streaming.</p>
+            <h4 class="text-2xl sm:text-3xl font-bold font-display text-white" data-i18n="pkg_mastering_title">Mastering Only</h4>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-2" data-i18n="pkg_mastering_desc">Untuk track yang sudah selesai di-mix mandiri namun butuh sentuhan akhir komersil, kohesi spektral, dan volume standar platform streaming.</p>
             
             <div class="my-6 py-4 border-y border-brand-border">
-              <span class="text-3xl sm:text-4xl font-extrabold text-white font-display">Rp 500.000</span>
-              <span class="text-xs text-zinc-500"> / track</span>
+              <span class="text-3xl sm:text-4xl font-extrabold text-white font-display" id="price-mastering" data-i18n="pkg_mastering_price">Rp 500.000</span>
+              <span class="text-xs text-zinc-500" data-i18n="pkg_price_unit"> / track</span>
             </div>
 
             <ul class="space-y-3.5 text-xs sm:text-sm text-zinc-300">
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Analog EQ & Surgical Dynamic EQ
+                <span data-i18n="pkg_mastering_f1">Analog EQ & Surgical Dynamic EQ</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Multi-band Compression & Bus Glue
+                <span data-i18n="pkg_mastering_f2">Multi-band Compression & Bus Glue</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                True Peak Limiting (-14 LUFS Spotify / Commercial Standard)
+                <span data-i18n="pkg_mastering_f3">True Peak Limiting (-14 LUFS Spotify / Commercial Standard)</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Stereo Width & Harmonic Warmth
+                <span data-i18n="pkg_mastering_f4">Stereo Width & Harmonic Warmth</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Format WAV 24-bit + WAV 16-bit + MP3 320kbps
+                <span data-i18n="pkg_mastering_f5">Format WAV 24-bit + WAV 16-bit + MP3 320kbps</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                2x Siklus Revisi Gratis
+                <span data-i18n="pkg_mastering_f6">2x Siklus Revisi Gratis</span>
               </li>
             </ul>
           </div>
 
-          <a href="#order" onclick="setPackage('Mastering Only')" class="mt-8 block text-center py-3.5 rounded-full border border-brand-border bg-zinc-900 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all">
+          <a href="#order" onclick="setPackage('Mastering Only')" class="mt-8 block text-center py-3.5 rounded-full border border-brand-border bg-zinc-900 text-xs font-bold uppercase tracking-wider text-white hover:bg-white hover:text-black transition-all" data-i18n="pkg_mastering_btn">
             Pilih Paket Mastering
           </a>
         </div>
 
         <!-- Package 2: Full Mixing & Mastering (Featured) -->
         <div class="rounded-3xl border-2 border-white bg-gradient-to-b from-[#18181b] to-brand-card p-8 sm:p-10 relative flex flex-col justify-between shadow-2xl group">
-          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-black text-[11px] font-bold uppercase tracking-wider shadow">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 px-4 py-1 rounded-full bg-white text-black text-[11px] font-bold uppercase tracking-wider shadow" data-i18n="pkg_mixmaster_badge">
             Paket Lengkap Rekomendasi
           </div>
 
           <div>
-            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/10 border border-white/20 text-white mb-4">
+            <div class="inline-block px-3 py-1 rounded-full text-[11px] font-mono uppercase bg-white/10 border border-white/20 text-white mb-4" data-i18n="pkg_mixmaster_tier">
               Full Multitrack
             </div>
-            <h4 class="text-2xl sm:text-3xl font-bold font-display text-white">Full Mixing & Mastering</h4>
-            <p class="text-xs sm:text-sm text-zinc-300 mt-2">Solusi all-in-one dari audio mentah multitrack hingga lagu jadi siap rilis di Spotify, Apple Music, dan radio komersil.</p>
+            <h4 class="text-2xl sm:text-3xl font-bold font-display text-white" data-i18n="pkg_mixmaster_title">Full Mixing & Mastering</h4>
+            <p class="text-xs sm:text-sm text-zinc-300 mt-2" data-i18n="pkg_mixmaster_desc">Solusi all-in-one dari audio mentah multitrack hingga lagu jadi siap rilis di Spotify, Apple Music, dan radio komersil.</p>
             
             <div class="my-6 py-4 border-y border-white/20">
-              <span class="text-3xl sm:text-4xl font-extrabold text-white font-display">Rp 1.500.000</span>
-              <span class="text-xs text-zinc-400"> / track</span>
+              <span class="text-3xl sm:text-4xl font-extrabold text-white font-display" id="price-mixmaster" data-i18n="pkg_mixmaster_price">Rp 1.500.000</span>
+              <span class="text-xs text-zinc-400" data-i18n="pkg_price_unit"> / track</span>
             </div>
 
             <ul class="space-y-3.5 text-xs sm:text-sm text-zinc-200">
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Full Multitrack balancing & 3D spatial imaging
+                <span data-i18n="pkg_mixmaster_f1">Full Multitrack balancing & 3D spatial imaging</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Vocal Tuning (Melodyne/Pitch correction) & Time Alignment
+                <span data-i18n="pkg_mixmaster_f2">Vocal Tuning (Melodyne/Pitch correction) & Time Alignment</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Full FX Chains (Reverbs, Delays, Saturation, Chorus)
+                <span data-i18n="pkg_mixmaster_f3">Full FX Chains (Reverbs, Delays, Saturation, Chorus)</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Analog summing & punchy low-end management
+                <span data-i18n="pkg_mixmaster_f4">Analog summing & punchy low-end management</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Gratis Final Stereo Mastering Included
+                <span data-i18n="pkg_mixmaster_f5">Gratis Final Stereo Mastering Included</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                Dapat Master WAV + Instrumental Master + Acapella
+                <span data-i18n="pkg_mixmaster_f6">Dapat Master WAV + Instrumental Master + Acapella</span>
               </li>
               <li class="flex items-center gap-3">
                 <i data-lucide="check" class="w-4 h-4 text-white shrink-0"></i>
-                3x Siklus Revisi Gratis
+                <span data-i18n="pkg_mixmaster_f7">3x Siklus Revisi Gratis</span>
               </li>
             </ul>
           </div>
 
-          <a href="#order" onclick="setPackage('Full Mixing & Mastering')" class="mt-8 block text-center py-4 rounded-full bg-white text-xs font-bold uppercase tracking-wider text-black hover:bg-zinc-200 transition-all shadow-lg">
+          <a href="#order" onclick="setPackage('Full Mixing & Mastering')" class="mt-8 block text-center py-4 rounded-full bg-white text-xs font-bold uppercase tracking-wider text-black hover:bg-zinc-200 transition-all shadow-lg" data-i18n="pkg_mixmaster_btn">
             Pilih Paket Lengkap
           </a>
         </div>
 
       </div>
 
-      <div class="mt-12 text-center text-xs text-zinc-400">
+      <div class="mt-12 text-center text-xs text-zinc-400" data-i18n-html="album_discount_note">
         Punya project Album / EP (lebih dari 3 lagu)? <a href="#order" class="underline text-white font-semibold">Hubungi kami untuk penawaran diskon paket album.</a>
       </div>
 
@@ -475,11 +408,11 @@
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Checklist Sebelum Kirim</h2>
-        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="guidelines_badge">Checklist Sebelum Kirim</h2>
+        <h3 class="text-3xl sm:text-4xl font-display font-extrabold text-white" data-i18n="guidelines_title">
           PANDUAN SUBMISSION FILE
         </h3>
-        <p class="text-sm text-zinc-400 mt-3">
+        <p class="text-sm text-zinc-400 mt-3" data-i18n="guidelines_desc">
           Ikuti pedoman ini agar hasil pengerjaan audio di Bullsrecords maksimal dan bebas distorsi.
         </p>
       </div>
@@ -490,8 +423,8 @@
           <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
             <span class="font-mono font-bold text-sm">01</span>
           </div>
-          <h4 class="text-base font-bold text-white">Format & Sample Rate</h4>
-          <p class="text-xs text-zinc-400 leading-relaxed">
+          <h4 class="text-base font-bold text-white" data-i18n="guideline_1_title">Format & Sample Rate</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed" data-i18n-html="guideline_1_text">
             Ekspor file dalam format <strong>WAV 24-bit</strong> (atau minimal 16-bit). Jangan kirim file MP3 jika memungkinkan. Gunakan sample rate proyek asli Anda (44.1 kHz, 48 kHz, atau 96 kHz).
           </p>
         </div>
@@ -500,8 +433,8 @@
           <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
             <span class="font-mono font-bold text-sm">02</span>
           </div>
-          <h4 class="text-base font-bold text-white">Headroom (Untuk Mastering)</h4>
-          <p class="text-xs text-zinc-400 leading-relaxed">
+          <h4 class="text-base font-bold text-white" data-i18n="guideline_2_title">Headroom (Untuk Mastering)</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed" data-i18n-html="guideline_2_text">
             Pastikan peak audio berada di antara <strong>-6 dBFS hingga -3 dBFS</strong>. Matikan limiter, maximizer, atau clipper pada Master Fader sebelum render file.
           </p>
         </div>
@@ -510,8 +443,8 @@
           <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
             <span class="font-mono font-bold text-sm">03</span>
           </div>
-          <h4 class="text-base font-bold text-white">Sinkronisasi Multitrack (0:00)</h4>
-          <p class="text-xs text-zinc-400 leading-relaxed">
+          <h4 class="text-base font-bold text-white" data-i18n="guideline_3_title">Sinkronisasi Multitrack (0:00)</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed" data-i18n-html="guideline_3_text">
             Semua stems/track audio wajib di-render dari titik awal yang sama (<strong>waktu 0:00</strong>) agar saat diimpor ke DAW kami, semua instrumen dan vokal tetap sinkron sempurna.
           </p>
         </div>
@@ -520,8 +453,8 @@
           <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center text-white">
             <span class="font-mono font-bold text-sm">04</span>
           </div>
-          <h4 class="text-base font-bold text-white">Track Vokal & Lagu Referensi</h4>
-          <p class="text-xs text-zinc-400 leading-relaxed">
+          <h4 class="text-base font-bold text-white" data-i18n="guideline_4_title">Track Vokal & Lagu Referensi</h4>
+          <p class="text-xs text-zinc-400 leading-relaxed" data-i18n-html="guideline_4_text">
             Kirimkan track vokal kering (Dry tanpa delay/reverb). Sertakan juga 1-2 lagu referensi komersil yang Anda suka agar teknisi kami paham arah karakter suara yang Anda inginkan.
           </p>
         </div>
@@ -536,8 +469,8 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-xl mx-auto mb-12">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Studio Setup</h2>
-        <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="gear_badge">Studio Setup</h2>
+        <h3 class="text-2xl sm:text-3xl font-display font-extrabold text-white" data-i18n="gear_title">
           ARSENAL TOOLS & TEKNOLOGI
         </h3>
       </div>
@@ -577,11 +510,11 @@
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-xl mx-auto mb-12">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Mulai Sekarang</h2>
-        <h3 class="text-3xl font-display font-extrabold text-white">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="order_badge">Mulai Sekarang</h2>
+        <h3 class="text-3xl font-display font-extrabold text-white" data-i18n="order_title">
           FORMULIR PEMESANAN AUDIO
         </h3>
-        <p class="text-xs text-zinc-400 mt-2">
+        <p class="text-xs text-zinc-400 mt-2" data-i18n="order_desc">
           Isi detail singkat project Anda di bawah. Klik kirim dan pesan akan otomatis terbuka di WhatsApp kami.
         </p>
       </div>
@@ -590,44 +523,44 @@
         
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Nama / Artis / Band</label>
-            <input type="text" id="form-name" required placeholder="Contoh: Dave / The Sounds" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2" data-i18n="label_name">Nama / Artis / Band</label>
+            <input type="text" id="form-name" required placeholder="Contoh: Dave / The Sounds" data-i18n-placeholder="placeholder_name" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
           </div>
           <div>
-            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Judul Lagu</label>
-            <input type="text" id="form-title" required placeholder="Contoh: Midnight Memories" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2" data-i18n="label_title">Judul Lagu</label>
+            <input type="text" id="form-title" required placeholder="Contoh: Midnight Memories" data-i18n-placeholder="placeholder_title" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
           </div>
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <div>
-            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Pilihan Paket Jasa</label>
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2" data-i18n="label_package">Pilihan Paket Jasa</label>
             <select id="form-package" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
-              <option value="Full Mixing & Mastering">Full Mixing & Mastering (Rp 1.500.000)</option>
-              <option value="Mastering Only">Mastering Only (Rp 500.000)</option>
-              <option value="Album / EP Package">Custom Package (Album / EP)</option>
+              <option value="Full Mixing & Mastering" id="opt-full-pkg" data-i18n="opt_package_full">Full Mixing & Mastering (Rp 1.500.000)</option>
+              <option value="Mastering Only" id="opt-master-pkg" data-i18n="opt_package_master">Mastering Only (Rp 500.000)</option>
+              <option value="Album / EP Package" id="opt-album-pkg" data-i18n="opt_package_album">Custom Package (Album / EP)</option>
             </select>
           </div>
           <div>
-            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Genre / Style Musik</label>
-            <input type="text" id="form-genre" placeholder="Contoh: Hip Hop, Pop Punk, R&B" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
+            <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2" data-i18n="label_genre">Genre / Style Musik</label>
+            <input type="text" id="form-genre" placeholder="Contoh: Hip Hop, Pop Punk, R&B" data-i18n-placeholder="placeholder_genre" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
           </div>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Link File Audio (Google Drive / Dropbox / WeTransfer)</label>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2" data-i18n="label_link">Link File Audio (Google Drive / Dropbox / WeTransfer)</label>
           <input type="url" id="form-link" placeholder="https://drive.google.com/..." class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white">
-          <p class="text-[11px] text-zinc-500 mt-1">Pastikan link Google Drive sudah diatur ke 'Anyone with the link / Siapa saja memiliki link'.</p>
+          <p class="text-[11px] text-zinc-500 mt-1" data-i18n="hint_link">Pastikan link Google Drive sudah diatur ke 'Anyone with the link / Siapa saja memiliki link'.</p>
         </div>
 
         <div>
-          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2">Catatan Tambahan & Lagu Referensi (Opsional)</label>
-          <textarea id="form-notes" rows="3" placeholder="Ingin vokal tebal seperti artis X, snare punchy, referensi lagu: ..." class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white"></textarea>
+          <label class="block text-xs font-semibold text-zinc-300 uppercase tracking-wider mb-2" data-i18n="label_notes">Catatan Tambahan & Lagu Referensi (Opsional)</label>
+          <textarea id="form-notes" rows="3" placeholder="Ingin vokal tebal seperti artis X, snare punchy, referensi lagu: ..." data-i18n-placeholder="placeholder_notes" class="w-full px-4 py-3 rounded-xl bg-black border border-brand-border text-white text-sm focus:outline-none focus:border-white"></textarea>
         </div>
 
         <button type="submit" class="w-full py-4 rounded-full bg-white text-black font-bold uppercase text-xs tracking-widest hover:bg-zinc-200 transition-all flex items-center justify-center gap-2 shadow-lg">
           <i data-lucide="send" class="w-4 h-4"></i>
-          Kirim Pesan ke WhatsApp Bullsrecords
+          <span data-i18n="order_submit_btn">Kirim Pesan ke WhatsApp Bullsrecords</span>
         </button>
 
       </form>
@@ -640,8 +573,8 @@
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-xl mx-auto mb-14">
-        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2">Tanya Jawab</h2>
-        <h3 class="text-3xl font-display font-extrabold text-white">
+        <h2 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="faq_badge">Tanya Jawab</h2>
+        <h3 class="text-3xl font-display font-extrabold text-white" data-i18n="faq_title">
           FREQUENTLY ASKED QUESTIONS
         </h3>
       </div>
@@ -650,40 +583,40 @@
         
         <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
           <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
-            Berapa lama waktu pengerjaan (turnaround time)?
+            <span data-i18n="faq_q1">Berapa lama waktu pengerjaan (turnaround time)?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
           </summary>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed" data-i18n="faq_a1">
             Untuk mastering single biasanya selesai dalam 1-2 hari kerja. Untuk full mixing & mastering single berkisar 3-5 hari kerja tergantung jumlah track multitrack.
           </p>
         </details>
 
         <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
           <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
-            Bagaimana jika hasil belum sesuai ekspektasi saya?
+            <span data-i18n="faq_q2">Bagaimana jika hasil belum sesuai ekspektasi saya?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
           </summary>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed" data-i18n="faq_a2">
             Setiap paket sudah mencakup revisi gratis (2-3 kali revisi). Anda cukup menuliskan timecode (misal: "di menit 01:23 vokal backing agak terlalu keras") dan kami akan perbaiki segera.
           </p>
         </details>
 
         <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
           <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
-            File apa saja yang saya dapatkan setelah selesai?
+            <span data-i18n="faq_q3">File apa saja yang saya dapatkan setelah selesai?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
           </summary>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed" data-i18n="faq_a3">
             Anda akan mendapatkan folder zip berisi: High-Resolution Master (WAV 24-bit 48kHz/96kHz), Streaming Ready Master (WAV 16-bit 44.1kHz -14 LUFS), MP3 320kbps, dan Instrumental Master (untuk live performance / backing track).
           </p>
         </details>
 
         <details class="group rounded-2xl border border-brand-border bg-brand-card p-6 cursor-pointer">
           <summary class="font-bold text-white text-sm sm:text-base flex items-center justify-between list-none">
-            Metode pembayaran apa saja yang diterima?
+            <span data-i18n="faq_q4">Metode pembayaran apa saja yang diterima?</span>
             <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform"></i>
           </summary>
-          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed">
+          <p class="text-xs sm:text-sm text-zinc-400 mt-3 leading-relaxed" data-i18n="faq_a4">
             Menerima Transfer Bank (BCA, Mandiri), QRIS (GoPay, OVO, ShopeePay, Dana), dan PayPal untuk klien internasional.
           </p>
         </details>
@@ -703,12 +636,12 @@
         </div>
         <div>
           <span class="font-display font-bold text-sm tracking-wider text-white uppercase">Bullsrecords</span>
-          <p class="text-[10px] text-zinc-500">Audio Mixing & Mastering Studio</p>
+          <p class="text-[10px] text-zinc-500" data-i18n="footer_subtitle">Audio Mixing & Mastering Studio</p>
         </div>
       </div>
 
       <div class="text-xs text-zinc-500 text-center sm:text-left">
-        &copy; <span id="year"></span> Bullsrecords. All rights reserved.
+        &copy; <span id="year"></span> Bullsrecords. <span data-i18n="footer_rights">All rights reserved.</span>
       </div>
 
       <div class="flex items-center gap-4 text-zinc-400">
@@ -726,7 +659,13 @@
     </div>
   </footer>
 
-  <!-- Scripts: Lucide, Audio Engine Sim, Form Handler -->
+  <!-- Floating WhatsApp Quick Button -->
+  <a id="floating-wa" href="https://wa.me/6285161194709?text=Halo%20Bullsrecords,%20saya%20mau%20konsultasi%20jasa%20mixing%20mastering" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#25D366] text-black font-bold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#20ba59] transition-all transform hover:scale-105 active:scale-95 group" title="Chat WhatsApp Bullsrecords">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.954-1.399C8.423 21.498 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
+    <span class="hidden sm:inline">WhatsApp</span>
+  </a>
+
+  <!-- Scripts: i18n Dictionary, GeoIP Auto-Detect, Form Handler -->
   <script>
     lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
@@ -737,6 +676,339 @@
     mobileBtn.addEventListener('click', () => {
       mobileMenu.classList.toggle('hidden');
     });
+
+    // ==========================================
+    // MULTI-LANGUAGE (i18n) DICTIONARY & LOGIC
+    // ==========================================
+    const translations = {
+      id: {
+        page_title: "Bullsrecords | Studio Jasa Mixing & Mastering Audio Profesional",
+        meta_description: "Layanan jasa Mixing & Mastering audio profesional untuk musisi, produser, dan label. Standar rilis Spotify, Apple Music, dan Vinyl.",
+        nav_portfolio: "Portofolio",
+        nav_services: "Layanan & Harga",
+        nav_guidelines: "Panduan Kirim File",
+        nav_gear: "Gear & Tech",
+        nav_faq: "FAQ",
+        nav_cta: "Konsultasi / Order",
+        nav_cta_mobile: "Konsultasi / Order via WhatsApp",
+        mobile_lang_label: "Bahasa / Language:",
+        hero_badge: "Online Studio • Siap Rilis Industri",
+        hero_subheadline: "Layanan Mixing & Mastering audio profesional untuk musisi independen, band, produser, dan label rekaman. Presisi vokal, balance dinamis, punchy low-end, dan standar volume rilis digital tanpa distorsi.",
+        hero_cta_consult: "Mulai Konsultasi Gratis",
+        hero_cta_spotify: "Portofolio Spotify",
+        trust_spotify: "Spotify & Apple Music Ready",
+        trust_turnaround_val: "3-5 Hari",
+        trust_turnaround: "Standar Turnaround Time",
+        trust_revisions_val: "Gratis",
+        trust_revisions: "Hingga 3x Siklus Revisi",
+        portfolio_badge: "Official Discography",
+        portfolio_title: "PORTOFOLIO SPOTIFY",
+        portfolio_desc: "Karya dan rilisan resmi yang telah melalui proses mixing & mastering profesional di Bullsrecords. Putar langsung dari playlist Spotify di bawah.",
+        portfolio_btn: "Buka di Aplikasi Spotify",
+        portfolio_video_badge: "Video Portofolio",
+        services_badge: "Penawaran Paket",
+        services_title: "LAYANAN & TARIF PROFESIONAL",
+        services_desc: "Transparan, tanpa biaya tersembunyi. Termasuk revisi dan deliverable standar streaming platform.",
+        pkg_price_unit: " / track",
+        pkg_mastering_tier: "Stereo Master",
+        pkg_mastering_title: "Mastering Only",
+        pkg_mastering_desc: "Untuk track yang sudah selesai di-mix mandiri namun butuh sentuhan akhir komersil, kohesi spektral, dan volume standar platform streaming.",
+        pkg_mastering_price: "Rp 500.000",
+        pkg_mastering_f1: "Analog EQ & Surgical Dynamic EQ",
+        pkg_mastering_f2: "Multi-band Compression & Bus Glue",
+        pkg_mastering_f3: "True Peak Limiting (-14 LUFS Spotify / Commercial Standard)",
+        pkg_mastering_f4: "Stereo Width & Harmonic Warmth",
+        pkg_mastering_f5: "Format WAV 24-bit + WAV 16-bit + MP3 320kbps",
+        pkg_mastering_f6: "2x Siklus Revisi Gratis",
+        pkg_mastering_btn: "Pilih Paket Mastering",
+        pkg_mixmaster_badge: "Paket Lengkap Rekomendasi",
+        pkg_mixmaster_tier: "Full Multitrack",
+        pkg_mixmaster_title: "Full Mixing & Mastering",
+        pkg_mixmaster_desc: "Solusi all-in-one dari audio mentah multitrack hingga lagu jadi siap rilis di Spotify, Apple Music, dan radio komersil.",
+        pkg_mixmaster_price: "Rp 1.500.000",
+        pkg_mixmaster_f1: "Full Multitrack balancing & 3D spatial imaging",
+        pkg_mixmaster_f2: "Vocal Tuning (Melodyne/Pitch correction) & Time Alignment",
+        pkg_mixmaster_f3: "Full FX Chains (Reverbs, Delays, Saturation, Chorus)",
+        pkg_mixmaster_f4: "Analog summing & punchy low-end management",
+        pkg_mixmaster_f5: "Gratis Final Stereo Mastering Included",
+        pkg_mixmaster_f6: "Dapat Master WAV + Instrumental Master + Acapella",
+        pkg_mixmaster_f7: "3x Siklus Revisi Gratis",
+        pkg_mixmaster_btn: "Pilih Paket Lengkap",
+        album_discount_note: 'Punya project Album / EP (lebih dari 3 lagu)? <a href="#order" class="underline text-white font-semibold">Hubungi kami untuk penawaran diskon paket album.</a>',
+        guidelines_badge: "Checklist Sebelum Kirim",
+        guidelines_title: "PANDUAN SUBMISSION FILE",
+        guidelines_desc: "Ikuti pedoman ini agar hasil pengerjaan audio di Bullsrecords maksimal dan bebas distorsi.",
+        guideline_1_title: "Format & Sample Rate",
+        guideline_1_text: "Ekspor file dalam format <strong>WAV 24-bit</strong> (atau minimal 16-bit). Jangan kirim file MP3 jika memungkinkan. Gunakan sample rate proyek asli Anda (44.1 kHz, 48 kHz, atau 96 kHz).",
+        guideline_2_title: "Headroom (Untuk Mastering)",
+        guideline_2_text: "Pastikan peak audio berada di antara <strong>-6 dBFS hingga -3 dBFS</strong>. Matikan limiter, maximizer, atau clipper pada Master Fader sebelum render file.",
+        guideline_3_title: "Sinkronisasi Multitrack (0:00)",
+        guideline_3_text: "Semua stems/track audio wajib di-render dari titik awal yang sama (<strong>waktu 0:00</strong>) agar saat diimpor ke DAW kami, semua instrumen dan vokal tetap sinkron sempurna.",
+        guideline_4_title: "Track Vokal & Lagu Referensi",
+        guideline_4_text: "Kirimkan track vokal kering (Dry tanpa delay/reverb). Sertakan juga 1-2 lagu referensi komersil yang Anda suka agar teknisi kami paham arah karakter suara yang Anda inginkan.",
+        gear_badge: "Studio Setup",
+        gear_title: "ARSENAL TOOLS & TEKNOLOGI",
+        order_badge: "Mulai Sekarang",
+        order_title: "FORMULIR PEMESANAN AUDIO",
+        order_desc: "Isi detail singkat project Anda di bawah. Klik kirim dan pesan akan otomatis terbuka di WhatsApp kami.",
+        label_name: "Nama / Artis / Band",
+        placeholder_name: "Contoh: Dave / The Sounds",
+        label_title: "Judul Lagu",
+        placeholder_title: "Contoh: Midnight Memories",
+        label_package: "Pilihan Paket Jasa",
+        opt_package_full: "Full Mixing & Mastering (Rp 1.500.000)",
+        opt_package_master: "Mastering Only (Rp 500.000)",
+        opt_package_album: "Custom Package (Album / EP)",
+        label_genre: "Genre / Style Musik",
+        placeholder_genre: "Contoh: Hip Hop, Pop Punk, R&B",
+        label_link: "Link File Audio (Google Drive / Dropbox / WeTransfer)",
+        hint_link: "Pastikan link Google Drive sudah diatur ke 'Anyone with the link / Siapa saja memiliki link'.",
+        label_notes: "Catatan Tambahan & Lagu Referensi (Opsional)",
+        placeholder_notes: "Ingin vokal tebal seperti artis X, snare punchy, referensi lagu: ...",
+        order_submit_btn: "Kirim Pesan ke WhatsApp Bullsrecords",
+        faq_badge: "Tanya Jawab",
+        faq_title: "FREQUENTLY ASKED QUESTIONS",
+        faq_q1: "Berapa lama waktu pengerjaan (turnaround time)?",
+        faq_a1: "Untuk mastering single biasanya selesai dalam 1-2 hari kerja. Untuk full mixing & mastering single berkisar 3-5 hari kerja tergantung jumlah track multitrack.",
+        faq_q2: "Bagaimana jika hasil belum sesuai ekspektasi saya?",
+        faq_a2: "Setiap paket sudah mencakup revisi gratis (2-3 kali revisi). Anda cukup menuliskan timecode (misal: \"di menit 01:23 vokal backing agak terlalu keras\") dan kami akan perbaiki segera.",
+        faq_q3: "File apa saja yang saya dapatkan setelah selesai?",
+        faq_a3: "Anda akan mendapatkan folder zip berisi: High-Resolution Master (WAV 24-bit 48kHz/96kHz), Streaming Ready Master (WAV 16-bit 44.1kHz -14 LUFS), MP3 320kbps, dan Instrumental Master (untuk live performance / backing track).",
+        faq_q4: "Metode pembayaran apa saja yang diterima?",
+        faq_a4: "Menerima Transfer Bank (BCA, Mandiri), QRIS (GoPay, OVO, ShopeePay, Dana), dan PayPal untuk klien internasional.",
+        footer_subtitle: "Audio Mixing & Mastering Studio",
+        footer_rights: "Hak cipta dilindungi.",
+        wa_floating_text: "Halo Bullsrecords, saya mau konsultasi jasa mixing mastering"
+      },
+      en: {
+        page_title: "Bullsrecords | Professional Audio Mixing & Mastering Studio",
+        meta_description: "Professional audio Mixing & Mastering services for musicians, producers, and record labels. Industry standard for Spotify, Apple Music, and Vinyl.",
+        nav_portfolio: "Portfolio",
+        nav_services: "Services & Pricing",
+        nav_guidelines: "File Guidelines",
+        nav_gear: "Gear & Tech",
+        nav_faq: "FAQ",
+        nav_cta: "Consult / Order",
+        nav_cta_mobile: "Consult / Order via WhatsApp",
+        mobile_lang_label: "Language / Bahasa:",
+        hero_badge: "Online Studio • Industry Release Ready",
+        hero_subheadline: "Professional audio Mixing & Mastering services for independent artists, bands, producers, and record labels. Vocal clarity, dynamic balance, punchy low-end, and commercial loudness without distortion.",
+        hero_cta_consult: "Start Free Consultation",
+        hero_cta_spotify: "Spotify Portfolio",
+        trust_spotify: "Spotify & Apple Music Ready",
+        trust_turnaround_val: "3-5 Days",
+        trust_turnaround: "Standard Turnaround Time",
+        trust_revisions_val: "Free",
+        trust_revisions: "Up to 3x Revision Rounds",
+        portfolio_badge: "Official Discography",
+        portfolio_title: "SPOTIFY PORTFOLIO",
+        portfolio_desc: "Official releases mixed and mastered at Bullsrecords. Stream directly from our official Spotify playlist below.",
+        portfolio_btn: "Open in Spotify App",
+        portfolio_video_badge: "Portfolio Video",
+        services_badge: "Pricing Plans",
+        services_title: "PROFESSIONAL SERVICES & RATES",
+        services_desc: "Transparent rates, no hidden fees. Includes revisions and streaming-standard deliverables.",
+        pkg_price_unit: " / track",
+        pkg_mastering_tier: "Stereo Master",
+        pkg_mastering_title: "Mastering Only",
+        pkg_mastering_desc: "For self-mixed tracks that need final commercial polish, spectral balance, and streaming-standard loudness.",
+        pkg_mastering_price: "$35 USD",
+        pkg_mastering_f1: "Analog EQ & Surgical Dynamic EQ",
+        pkg_mastering_f2: "Multi-band Compression & Bus Glue",
+        pkg_mastering_f3: "True Peak Limiting (-14 LUFS Spotify / Commercial Standard)",
+        pkg_mastering_f4: "Stereo Width & Harmonic Warmth",
+        pkg_mastering_f5: "24-bit WAV + 16-bit WAV + 320kbps MP3 Formats",
+        pkg_mastering_f6: "2x Free Revision Rounds",
+        pkg_mastering_btn: "Select Mastering Package",
+        pkg_mixmaster_badge: "Recommended All-in-One",
+        pkg_mixmaster_tier: "Full Multitrack",
+        pkg_mixmaster_title: "Full Mixing & Mastering",
+        pkg_mixmaster_desc: "Complete end-to-end processing from raw stems to a radio-ready, streaming-ready commercial release.",
+        pkg_mixmaster_price: "$100 USD",
+        pkg_mixmaster_f1: "Full Multitrack balancing & 3D spatial imaging",
+        pkg_mixmaster_f2: "Vocal Tuning (Melodyne/Pitch correction) & Time Alignment",
+        pkg_mixmaster_f3: "Full FX Chains (Reverbs, Delays, Saturation, Chorus)",
+        pkg_mixmaster_f4: "Analog summing & punchy low-end management",
+        pkg_mixmaster_f5: "Free Final Stereo Mastering Included",
+        pkg_mixmaster_f6: "Master WAV + Instrumental Master + Acapella Included",
+        pkg_mixmaster_f7: "3x Free Revision Rounds",
+        pkg_mixmaster_btn: "Select Full Package",
+        album_discount_note: 'Working on an EP or Album (more than 3 tracks)? <a href="#order" class="underline text-white font-semibold">Contact us for custom bundle discounts.</a>',
+        guidelines_badge: "Pre-flight Checklist",
+        guidelines_title: "FILE SUBMISSION GUIDELINES",
+        guidelines_desc: "Follow these recommendations to guarantee the best audio quality and distortion-free delivery.",
+        guideline_1_title: "Format & Sample Rate",
+        guideline_1_text: "Export audio files in <strong>24-bit WAV</strong> (or minimum 16-bit). Avoid MP3 files when possible. Keep your project native sample rate (44.1 kHz, 48 kHz, or 96 kHz).",
+        guideline_2_title: "Headroom (For Mastering)",
+        guideline_2_text: "Ensure peak audio levels are between <strong>-6 dBFS and -3 dBFS</strong>. Bypass any limiter, maximizer, or clipper on your Master Fader before exporting.",
+        guideline_3_title: "Multitrack Sync (0:00)",
+        guideline_3_text: "Consolidate all stems/tracks from the exact same starting point (<strong>time 0:00</strong>) so all audio tracks align perfectly when loaded into our DAW.",
+        guideline_4_title: "Vocal Tracks & Reference Tracks",
+        guideline_4_text: "Provide dry vocal tracks (no reverb/delay). Also include 1-2 commercial reference tracks you love so we understand your sonic direction.",
+        gear_badge: "Studio Setup",
+        gear_title: "STUDIO GEAR & TECH ARSENAL",
+        order_badge: "Get Started",
+        order_title: "AUDIO ORDER & INQUIRY FORM",
+        order_desc: "Fill in your project details below. Click submit to open a direct WhatsApp chat with our audio engineer.",
+        label_name: "Name / Artist / Band",
+        placeholder_name: "e.g. Dave / The Sounds",
+        label_title: "Song / Track Title",
+        placeholder_title: "e.g. Midnight Memories",
+        label_package: "Package Selection",
+        opt_package_full: "Full Mixing & Mastering ($100 USD)",
+        opt_package_master: "Mastering Only ($35 USD)",
+        opt_package_album: "Custom Package (Album / EP)",
+        label_genre: "Genre / Musical Style",
+        placeholder_genre: "e.g. Hip Hop, Pop Punk, R&B",
+        label_link: "Audio Files Link (Google Drive / Dropbox / WeTransfer)",
+        hint_link: "Make sure cloud sharing permissions are set to 'Anyone with the link can view/download'.",
+        label_notes: "Additional Notes & Reference Tracks (Optional)",
+        placeholder_notes: "Vocal sound preferences, reference tracks, specific mix notes...",
+        order_submit_btn: "Send Inquiry via WhatsApp",
+        faq_badge: "Q & A",
+        faq_title: "FREQUENTLY ASKED QUESTIONS",
+        faq_q1: "What is the typical turnaround time?",
+        faq_a1: "Mastering for a single is typically finished within 1-2 business days. Full mixing & mastering takes 3-5 business days depending on multitrack stem count.",
+        faq_q2: "What if I need revisions or adjustments?",
+        faq_a2: "Every package includes free revision rounds (2-3 rounds). Simply provide timecode notes (e.g. 'at 01:23 backing vocals are slightly too loud') and we will adjust quickly.",
+        faq_q3: "What files will I receive upon project completion?",
+        faq_a3: "You will receive a master ZIP archive containing: High-Resolution Master (WAV 24-bit 48/96kHz), Streaming-Ready Master (WAV 16-bit 44.1kHz -14 LUFS), MP3 320kbps, and Instrumental Master (for live performance/backing tracks).",
+        faq_q4: "What payment methods do you accept?",
+        faq_a4: "We accept PayPal & International Wire for global clients, as well as Indonesian Bank Transfer (BCA, Mandiri) and QRIS.",
+        footer_subtitle: "Audio Mixing & Mastering Studio",
+        footer_rights: "All rights reserved.",
+        wa_floating_text: "Hello Bullsrecords, I would like to inquire about audio mixing and mastering services"
+      }
+    };
+
+    let currentLanguage = 'id';
+
+    function setLanguage(lang, userExplicit = false) {
+      if (!translations[lang]) lang = 'id';
+      currentLanguage = lang;
+      const t = translations[lang];
+
+      if (userExplicit) {
+        localStorage.setItem('bullsrecords_lang', lang);
+      }
+
+      document.documentElement.lang = lang;
+      document.getElementById('page-title').textContent = t.page_title;
+      document.getElementById('meta-description').setAttribute('content', t.meta_description);
+
+      // Text elements
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (t[key] !== undefined) {
+          el.textContent = t[key];
+        }
+      });
+
+      // HTML elements
+      document.querySelectorAll('[data-i18n-html]').forEach(el => {
+        const key = el.getAttribute('data-i18n-html');
+        if (t[key] !== undefined) {
+          el.innerHTML = t[key];
+        }
+      });
+
+      // Input Placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (t[key] !== undefined) {
+          el.placeholder = t[key];
+        }
+      });
+
+      // Select Options
+      const optFull = document.getElementById('opt-full-pkg');
+      const optMaster = document.getElementById('opt-master-pkg');
+      const optAlbum = document.getElementById('opt-album-pkg');
+      if (optFull) optFull.textContent = t.opt_package_full;
+      if (optMaster) optMaster.textContent = t.opt_package_master;
+      if (optAlbum) optAlbum.textContent = t.opt_package_album;
+
+      // Floating WhatsApp Link
+      const floatingWa = document.getElementById('floating-wa');
+      if (floatingWa) {
+        floatingWa.href = `https://wa.me/6285161194709?text=${encodeURIComponent(t.wa_floating_text)}`;
+      }
+
+      // Update Switcher UI Buttons
+      updateSwitcherUI(lang);
+    }
+
+    function updateSwitcherUI(lang) {
+      const activeClass = "px-2.5 py-1 rounded-full text-xs font-bold transition-all bg-white text-black shadow-sm";
+      const inactiveClass = "px-2.5 py-1 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white";
+      const mobileActiveClass = "px-3 py-1 rounded-full text-xs font-bold transition-all bg-white text-black shadow-sm";
+      const mobileInactiveClass = "px-3 py-1 rounded-full text-xs font-bold transition-all text-zinc-400 hover:text-white";
+
+      const btnId = document.getElementById('lang-btn-id');
+      const btnEn = document.getElementById('lang-btn-en');
+      const mBtnId = document.getElementById('mobile-lang-btn-id');
+      const mBtnEn = document.getElementById('mobile-lang-btn-en');
+
+      if (btnId && btnEn) {
+        btnId.className = (lang === 'id') ? activeClass : inactiveClass;
+        btnEn.className = (lang === 'en') ? activeClass : inactiveClass;
+      }
+      if (mBtnId && mBtnEn) {
+        mBtnId.className = (lang === 'id') ? mobileActiveClass : mobileInactiveClass;
+        mBtnEn.className = (lang === 'en') ? mobileActiveClass : mobileInactiveClass;
+      }
+    }
+
+    // ==========================================
+    // AUTO IP & GEO-LOCATION DETECTION
+    // ==========================================
+    async function initLanguageDetection() {
+      // 1. Check user explicit manual preference first
+      const savedLang = localStorage.getItem('bullsrecords_lang');
+      if (savedLang && (savedLang === 'id' || savedLang === 'en')) {
+        setLanguage(savedLang);
+        return;
+      }
+
+      // 2. Immediate fast default based on navigator.language
+      const browserLang = (navigator.language || navigator.userLanguage || '').toLowerCase();
+      const defaultGuess = browserLang.startsWith('id') ? 'id' : 'en';
+      setLanguage(defaultGuess);
+
+      // 3. Precise IP Country detection via Cloudflare trace endpoint
+      try {
+        const cfTrace = await fetch('/cdn-cgi/trace', { cache: 'no-store' });
+        if (cfTrace.ok) {
+          const text = await cfTrace.text();
+          const match = text.match(/loc=([A-Z]{2})/i);
+          if (match && match[1]) {
+            const countryCode = match[1].toUpperCase();
+            // If visitor is in Indonesia -> ID, otherwise all international countries -> EN
+            const detected = (countryCode === 'ID') ? 'id' : 'en';
+            setLanguage(detected);
+            return;
+          }
+        }
+      } catch (err) {
+        // Fallback for local testing or blocked trace
+      }
+
+      // 4. Secondary fallback via free IP Geo API
+      try {
+        const ipRes = await fetch('https://ipapi.co/json/', { cache: 'no-store' });
+        if (ipRes.ok) {
+          const data = await ipRes.json();
+          if (data && data.country_code) {
+            const detected = (data.country_code.toUpperCase() === 'ID') ? 'id' : 'en';
+            setLanguage(detected);
+          }
+        }
+      } catch (e) {
+        // Keep defaultGuess
+      }
+    }
+
+    initLanguageDetection();
 
     // Helper to select package from cards
     function setPackage(pkgName) {
@@ -760,247 +1032,32 @@
       const link = document.getElementById('form-link').value || '-';
       const notes = document.getElementById('form-notes').value || '-';
 
-      const message = `Halo Bullsrecords! Saya mau pesan jasa audio:%0A%0A` +
-        `*Nama/Artis:* ${encodeURIComponent(name)}%0A` +
-        `*Judul Lagu:* ${encodeURIComponent(title)}%0A` +
-        `*Paket Layanan:* ${encodeURIComponent(pkg)}%0A` +
-        `*Genre:* ${encodeURIComponent(genre)}%0A` +
-        `*Link File:* ${encodeURIComponent(link)}%0A` +
-        `*Catatan:* ${encodeURIComponent(notes)}%0A%0A` +
-        `Mohon info estimasi dan langkah selanjutnya. Terima kasih!`;
+      let message = '';
+      if (currentLanguage === 'en') {
+        message = `Hello Bullsrecords! I would like to order audio services:%0A%0A` +
+          `*Name/Artist:* ${encodeURIComponent(name)}%0A` +
+          `*Track Title:* ${encodeURIComponent(title)}%0A` +
+          `*Package:* ${encodeURIComponent(pkg)}%0A` +
+          `*Genre:* ${encodeURIComponent(genre)}%0A` +
+          `*Audio Files Link:* ${encodeURIComponent(link)}%0A` +
+          `*Notes & References:* ${encodeURIComponent(notes)}%0A%0A` +
+          `Please advise turnaround estimate and next steps. Thank you!`;
+      } else {
+        message = `Halo Bullsrecords! Saya mau pesan jasa audio:%0A%0A` +
+          `*Nama/Artis:* ${encodeURIComponent(name)}%0A` +
+          `*Judul Lagu:* ${encodeURIComponent(title)}%0A` +
+          `*Paket Layanan:* ${encodeURIComponent(pkg)}%0A` +
+          `*Genre:* ${encodeURIComponent(genre)}%0A` +
+          `*Link File:* ${encodeURIComponent(link)}%0A` +
+          `*Catatan:* ${encodeURIComponent(notes)}%0A%0A` +
+          `Mohon info estimasi dan langkah selanjutnya. Terima kasih!`;
+      }
 
       // WhatsApp Bullsrecords
       const waNumber = '6285161194709';
       window.open(`https://wa.me/${waNumber}?text=${message}`, '_blank');
     });
 
-    // ==========================================
-    // Interactive Web Audio DSP Simulator Engine (Disabled)
-    // ==========================================
-    /*
-    const tracksData = [
-      {
-        genre: "GENRE: HIP-HOP / TRAP",
-        title: "Midnight Signal - Demo Session",
-        tempo: 130,
-        type: 'trap'
-      },
-      {
-        genre: "GENRE: INDIE ROCK / BAND",
-        title: "Neon Horizon - Band Demo",
-        tempo: 120,
-        type: 'rock'
-      },
-      {
-        genre: "GENRE: ACOUSTIC POP VOCAL",
-        title: "Echoes of You - Acoustic Live",
-        tempo: 95,
-        type: 'acoustic'
-      }
-    ];
-
-    let currentTrackIdx = 0;
-    let isPlaying = false;
-    let isMasteredMode = true; // true = Mastered (After), false = Raw (Before)
-    let audioCtx = null;
-    let masterGain = null;
-    let filterNode = null;
-    let compNode = null;
-    let animId = null;
-    let trackPosition = 0;
-    const trackDuration = 30; // 30 seconds loop
-    let playInterval = null;
-
-    const playBtn = document.getElementById('play-btn');
-    const playIcon = document.getElementById('play-icon');
-    const playerStatusText = document.getElementById('player-status-text');
-    const btnRaw = document.getElementById('btn-raw');
-    const btnMastered = document.getElementById('btn-mastered');
-    const modeExplanation = document.getElementById('mode-explanation');
-    const timeDisplay = document.getElementById('time-display');
-    const needle = document.getElementById('playback-needle');
-    const vinylDisc = document.getElementById('vinyl-disc');
-
-    // Visualizer Canvas setup
-    const canvas = document.getElementById('waveform-canvas');
-    const ctx = canvas.getContext('2d');
-    function resizeCanvas() {
-      canvas.width = canvas.parentElement.clientWidth;
-      canvas.height = canvas.parentElement.clientHeight;
-    }
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    function initAudio() {
-      if (!audioCtx) {
-        const AudioContext = window.AudioContext || window.webkitAudioContext;
-        audioCtx = new AudioContext();
-      }
-      if (audioCtx.state === 'suspended') {
-        audioCtx.resume();
-      }
-    }
-
-    // Synthesizer Loop Generator to create dynamic soundscape
-    let synthLoopTimer = null;
-    function scheduleBeat() {
-      if (!isPlaying || !audioCtx) return;
-
-      const track = tracksData[currentTrackIdx];
-      const now = audioCtx.currentTime;
-
-      // Base Kick / Sub
-      const osc = audioCtx.createOscillator();
-      const gain = audioCtx.createGain();
-      
-      if (isMasteredMode) {
-        // Punchy, deep, full
-        osc.frequency.setValueAtTime(140, now);
-        osc.frequency.exponentialRampToValueAtTime(35, now + 0.18);
-        gain.gain.setValueAtTime(0.7, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35);
-      } else {
-        // Raw, muddy, weak sub
-        osc.frequency.setValueAtTime(110, now);
-        osc.frequency.exponentialRampToValueAtTime(55, now + 0.15);
-        gain.gain.setValueAtTime(0.35, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25);
-      }
-
-      osc.connect(gain);
-      gain.connect(audioCtx.destination);
-      osc.start(now);
-      osc.stop(now + 0.4);
-
-      // Snare / Click on alternate beats
-      if (Math.floor(trackPosition * 2) % 2 === 1) {
-        const snareOsc = audioCtx.createOscillator();
-        const snareGain = audioCtx.createGain();
-        snareOsc.type = isMasteredMode ? 'triangle' : 'sine';
-        snareOsc.frequency.setValueAtTime(isMasteredMode ? 280 : 180, now);
-        snareGain.gain.setValueAtTime(isMasteredMode ? 0.25 : 0.1, now);
-        snareGain.gain.exponentialRampToValueAtTime(0.001, now + 0.15);
-
-        snareOsc.connect(snareGain);
-        snareGain.connect(audioCtx.destination);
-        snareOsc.start(now);
-        snareOsc.stop(now + 0.2);
-      }
-
-      const beatInterval = (60 / track.tempo) * 1000 / 2;
-      synthLoopTimer = setTimeout(scheduleBeat, beatInterval);
-    }
-
-    function drawWaveform() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      const bars = 64;
-      const barWidth = canvas.width / bars;
-      const centerY = canvas.height / 2;
-
-      for (let i = 0; i < bars; i++) {
-        let heightMultiplier = Math.sin((i / 8) + (trackPosition * 4)) * 0.5 + 0.5;
-        if (!isPlaying) heightMultiplier = Math.sin(i / 5) * 0.3 + 0.1;
-
-        // Mastered has wider dynamic peaks and crisp loudness
-        const h = isMasteredMode ? heightMultiplier * (canvas.height * 0.75) : heightMultiplier * (canvas.height * 0.38);
-
-        ctx.fillStyle = isMasteredMode 
-          ? (i % 2 === 0 ? '#ffffff' : '#a1a1aa') 
-          : (i % 2 === 0 ? '#52525b' : '#3f3f46');
-
-        ctx.fillRect(i * barWidth + 2, centerY - h / 2, barWidth - 4, h);
-      }
-
-      if (isPlaying) {
-        animId = requestAnimationFrame(drawWaveform);
-      }
-    }
-    drawWaveform();
-
-    function updateModeUI() {
-      if (isMasteredMode) {
-        btnMastered.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-white text-black transition-all shadow-lg";
-        btnRaw.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-400 transition-all hover:text-white";
-        modeExplanation.innerHTML = `Mode: <strong class="text-white">Bullsrecords Mastered</strong> (Full Dynamic Control, Stereo Width, Harmonic Saturation & Commercial Volume).`;
-      } else {
-        btnRaw.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider bg-zinc-700 text-white transition-all shadow-lg";
-        btnMastered.className = "flex-1 sm:flex-none px-6 py-2.5 rounded-full text-xs font-bold uppercase tracking-wider text-zinc-400 transition-all hover:text-white";
-        modeExplanation.innerHTML = `Mode: <strong class="text-zinc-300">Raw Mix (Before)</strong> (Unprocessed, muddy low-end, peak clashing, volume belum seimbang).`;
-      }
-      drawWaveform();
-    }
-
-    btnRaw.addEventListener('click', () => {
-      isMasteredMode = false;
-      updateModeUI();
-    });
-
-    btnMastered.addEventListener('click', () => {
-      isMasteredMode = true;
-      updateModeUI();
-    });
-
-    function togglePlayback() {
-      initAudio();
-      isPlaying = !isPlaying;
-
-      if (isPlaying) {
-        playIcon.setAttribute('data-lucide', 'pause');
-        playerStatusText.textContent = 'Sedang Diputar';
-        vinylDisc.classList.remove('vinyl-spin-paused');
-        scheduleBeat();
-        drawWaveform();
-
-        playInterval = setInterval(() => {
-          trackPosition = (trackPosition + 0.1) % trackDuration;
-          const pct = (trackPosition / trackDuration) * 100;
-          needle.style.left = `${pct}%`;
-          
-          const curMin = String(Math.floor(trackPosition / 60)).padStart(2, '0');
-          const curSec = String(Math.floor(trackPosition % 60)).padStart(2, '0');
-          timeDisplay.textContent = `${curMin}:${curSec} / 00:30`;
-        }, 100);
-
-      } else {
-        playIcon.setAttribute('data-lucide', 'play');
-        playerStatusText.textContent = 'Dijeda';
-        vinylDisc.classList.add('vinyl-spin-paused');
-        clearTimeout(synthLoopTimer);
-        clearInterval(playInterval);
-      }
-      lucide.createIcons();
-    }
-
-    playBtn.addEventListener('click', togglePlayback);
-
-    // Switch Tracks Tabs
-    const trackTabs = document.querySelectorAll('.track-tab');
-    trackTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        trackTabs.forEach(t => {
-          t.className = "track-tab px-4 py-2 rounded-full text-xs font-semibold bg-zinc-900 text-zinc-400 hover:text-white border border-brand-border transition-all";
-        });
-        tab.className = "track-tab active px-4 py-2 rounded-full text-xs font-semibold bg-white text-black transition-all";
-        
-        currentTrackIdx = parseInt(tab.dataset.track, 10);
-        const data = tracksData[currentTrackIdx];
-        document.getElementById('current-genre').textContent = data.genre;
-        document.getElementById('current-title').textContent = data.title;
-        
-        // Reset position
-        trackPosition = 0;
-        needle.style.left = '0%';
-        timeDisplay.textContent = '00:00 / 00:30';
-      });
-    });
-    */
-
   </script>
-
-  <!-- Floating WhatsApp Quick Button -->
-  <a href="https://wa.me/6285161194709?text=Halo%20Bullsrecords,%20saya%20mau%20konsultasi%20jasa%20mixing%20mastering" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-50 flex items-center gap-2.5 px-4 py-3 rounded-full bg-[#25D366] text-black font-bold text-xs uppercase tracking-wider shadow-2xl hover:bg-[#20ba59] transition-all transform hover:scale-105 active:scale-95 group" title="Chat WhatsApp Bullsrecords">
-    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766 0-3.18-2.587-5.771-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.007c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86.174.086.275.072.376-.044.101-.116.433-.506.549-.68.116-.173.231-.145.39-.086s1.011.477 1.184.564.289.13.332.202c.043.073.043.419-.101.824zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.954-1.399C8.423 21.498 10.155 22 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2z"/></svg>
-    <span class="hidden sm:inline">WhatsApp</span>
-  </a>
 </body>
 </html>

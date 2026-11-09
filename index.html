@@ -216,46 +216,308 @@
     </div>
   </section>
 
-  <!-- Official Spotify Portfolio Section -->
+  <!-- Official Spotify Portfolio & Charts Section -->
   <section id="portfolio" class="py-24 border-t border-brand-border relative bg-gradient-to-b from-[#080808] via-zinc-950 to-[#080808]">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
-        <div>
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-wider text-emerald-400 mb-3">
-            <svg class="w-3.5 h-3.5 fill-[#1DB954]" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-            <span data-i18n="portfolio_badge">Official Discography</span>
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs uppercase tracking-wider text-emerald-400 mb-3">
+          <svg class="w-3.5 h-3.5 fill-[#1DB954]" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+          <span data-i18n="chart_badge">Bullsrecords Discography Charts</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white" data-i18n="chart_title">
+          TANGGA LAGU & RILISAN RESMI
+        </h2>
+        <p class="text-sm text-zinc-400 mt-2" data-i18n="chart_desc">
+          Karya-karya resmi pilihan yang di-mixing & di-mastering oleh Bullsrecords. Diputar jutaan kali di berbagai platform digital.
+        </p>
+
+        <!-- Category Tabs Switcher -->
+        <div class="inline-flex items-center p-1.5 rounded-full bg-zinc-900/90 border border-brand-border mt-8 shadow-xl">
+          <button id="chart-tab-top" onclick="switchChartTab('top')" class="px-5 sm:px-7 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-white text-black shadow-md flex items-center gap-2">
+            <span>🔥</span>
+            <span data-i18n="tab_tophits">Top Hits (Play Terbanyak)</span>
+          </button>
+          <button id="chart-tab-new" onclick="switchChartTab('new')" class="px-5 sm:px-7 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all text-zinc-400 hover:text-white flex items-center gap-2">
+            <span>⚡</span>
+            <span data-i18n="tab_newcoming">New Coming (Rilisan Terbaru)</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Tab View 1: Top Hits (Play Terbanyak) -->
+      <div id="chart-view-top" class="space-y-3">
+        
+        <!-- Track 1: Superglad - Konservatif -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-amber-400 w-7 sm:w-8 text-center shrink-0">#01</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02c186864f89aaf89f386a4e2b" alt="Konservatif - Superglad" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Konservatif</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-amber-500/10 text-amber-300 border border-amber-500/30 shrink-0">🔥 1.5M+ STREAMS</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Superglad • <span class="text-zinc-500">Rock / Alternative</span></p>
+            </div>
           </div>
-          <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white" data-i18n="portfolio_title">
-            PORTOFOLIO SPOTIFY
-          </h2>
-          <p class="text-sm text-zinc-400 mt-2 max-w-xl" data-i18n="portfolio_desc">
-            Karya dan rilisan resmi yang telah melalui proses mixing & mastering profesional di Bullsrecords. Putar langsung dari playlist Spotify di bawah.
-          </p>
+          <a href="https://open.spotify.com/track/3cwRrXK5waTTC8WJLiaKSe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
         </div>
 
-        <a href="https://open.spotify.com/playlist/5ZaratnXq1OY4j2BX5bkaq?si=5gZwUDRcQtuPo-6_Vd4iKg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2.5 px-6 py-3 rounded-full bg-[#1DB954] text-black font-bold text-xs uppercase tracking-wider hover:bg-[#1ed760] transition-all transform active:scale-95 shadow-lg w-fit">
-          <svg class="w-4 h-4 fill-black" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
-          <span data-i18n="portfolio_btn">Buka di Aplikasi Spotify</span>
-        </a>
+        <!-- Track 2: Superglad - Kamu -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-200 w-7 sm:w-8 text-center shrink-0">#02</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e0263100685f9c4295d09a1bdeb" alt="Kamu - Superglad" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Kamu</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-zinc-500/10 text-zinc-300 border border-zinc-500/30 shrink-0">🔥 750K+ STREAMS</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Superglad • <span class="text-zinc-500">Rock / Pop Punk</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/4vfKGfvtZwcxEQyUaSnuNb" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 3: Melody Maker - Kemenangan -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-orange-400 w-7 sm:w-8 text-center shrink-0">#03</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02608299186cb47167f528a16f" alt="Kemenangan - Melody Maker" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Kemenangan</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-orange-500/10 text-orange-300 border border-orange-500/30 shrink-0">🔥 HEAVY ROTATION</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Melody Maker • <span class="text-zinc-500">Post-Hardcore / Rock</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/6SgenlGICzJJ7S9Z0TYIea" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 4: Melody Maker - Fall For You -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-500 w-7 sm:w-8 text-center shrink-0">#04</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02608299186cb47167f528a16f" alt="Fall For You - Melody Maker" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Fall For You</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/5 text-zinc-300 border border-white/10 shrink-0">🔥 FAN FAVORITE</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Melody Maker • <span class="text-zinc-500">Alternative Rock / Emo</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/3Wjkcfs4ird5tVH48vnh6f" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 5: Pretty Violence - Sirkus Politik -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-500 w-7 sm:w-8 text-center shrink-0">#05</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e023d487ae2de869fd29f64803f" alt="Sirkus Politik - Pretty Violence" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Sirkus Politik</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/5 text-zinc-300 border border-white/10 shrink-0">🔥 TOP STREAMED</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Pretty Violence • <span class="text-zinc-500">Punk Rock</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/50LbnNfQ0mhNjNIV6NC3Qf" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 6: Overcase - Everyday -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-500 w-7 sm:w-8 text-center shrink-0">#06</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02597b1a1f2ef961e7c0022253" alt="Everyday - Overcase" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Everyday</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/5 text-zinc-300 border border-white/10 shrink-0">🔥 POPULAR</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Overcase • <span class="text-zinc-500">Pop Punk</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/1tUdBLEXXE7lpbousrIynK" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
       </div>
 
-      <!-- Spotify Playlist Embed Frame -->
-      <div class="rounded-3xl border border-brand-border bg-brand-card p-4 sm:p-6 shadow-2xl relative">
-        <iframe 
-          style="border-radius:18px" 
-          src="https://open.spotify.com/embed/playlist/5ZaratnXq1OY4j2BX5bkaq?utm_source=generator&theme=0" 
-          width="100%" 
-          height="450" 
-          frameBorder="0" 
-          allowfullscreen="" 
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
-          loading="lazy"
-          class="w-full shadow-inner">
-        </iframe>
+      <!-- Tab View 2: New Coming (Rilisan Terbaru) -->
+      <div id="chart-view-new" class="space-y-3 hidden">
+        
+        <!-- Track 1: LEGDAY - Bowtie -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-emerald-400 w-7 sm:w-8 text-center shrink-0">#01</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02458511cdc462bed7950e9600" alt="Bowtie - LEGDAY" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Bowtie</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 shrink-0">✨ NEW SINGLE</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">LEGDAY • <span class="text-zinc-500">Alternative Rock</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/07M8rbC1QI2DbHa7vGSLr6" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 2: Invicta ft. Anggi arriadi - Anguish -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-emerald-400 w-7 sm:w-8 text-center shrink-0">#02</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e0214de78dae1b5b3e0bb2b887c" alt="Anguish - Invicta" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Anguish</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 shrink-0">✨ NEW RELEASE</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Invicta, Anggi arriadi • <span class="text-zinc-500">Metal / Hardcore</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/2SjtrNBkyTo74hKzVDHrxg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 3: Another Father - Asa Yang Hilang -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-emerald-400 w-7 sm:w-8 text-center shrink-0">#03</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02f5ce86258902d82e63372890" alt="Asa Yang Hilang - Another Father" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Asa Yang Hilang</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-500/10 text-emerald-300 border border-emerald-500/30 shrink-0">✨ FRESH DROP</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Another Father • <span class="text-zinc-500">Melodic Punk</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/3shr1dOrspoogwekvyySeY" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 4: Another Father - Rajut Kembali -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-500 w-7 sm:w-8 text-center shrink-0">#04</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02f5ce86258902d82e63372890" alt="Rajut Kembali - Another Father" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Rajut Kembali</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/5 text-zinc-300 border border-white/10 shrink-0">✨ RECENT RELEASE</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Another Father • <span class="text-zinc-500">Pop Punk</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/4TR3x9Pm3pTSCN4huoYguD" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 5: Overcase - Terkadang Terluka (Piano Version) -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-500 w-7 sm:w-8 text-center shrink-0">#05</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02597b1a1f2ef961e7c0022253" alt="Terkadang Terluka - Overcase" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Terkadang Terluka (Piano Version)</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/5 text-zinc-300 border border-white/10 shrink-0">✨ SPECIAL VERSION</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Overcase • <span class="text-zinc-500">Acoustic Piano</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/4RrzPfw0gpcgMoXWShgWe1" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
+        <!-- Track 6: Overcase - Mengejar Impian -->
+        <div class="group flex items-center justify-between p-3.5 sm:p-4 rounded-2xl border border-brand-border bg-brand-card hover:bg-brand-cardHover hover:border-zinc-500 transition-all gap-3 sm:gap-4 shadow-md">
+          <div class="flex items-center gap-3 sm:gap-4 min-w-0">
+            <span class="font-display font-extrabold text-base sm:text-lg text-zinc-500 w-7 sm:w-8 text-center shrink-0">#06</span>
+            <img src="https://i.scdn.co/image/ab67616d00001e02597b1a1f2ef961e7c0022253" alt="Mengejar Impian - Overcase" class="w-12 h-12 sm:w-14 sm:h-14 rounded-xl object-cover shrink-0 border border-white/10 group-hover:scale-105 transition-transform" loading="lazy">
+            <div class="min-w-0">
+              <div class="flex items-center gap-2 flex-wrap">
+                <h4 class="text-sm sm:text-base font-bold text-white group-hover:text-emerald-400 transition-colors truncate">Mengejar Impian</h4>
+                <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-white/5 text-zinc-300 border border-white/10 shrink-0">✨ FRESH RELEASE</span>
+              </div>
+              <p class="text-xs text-zinc-400 mt-0.5 truncate">Overcase • <span class="text-zinc-500">Pop Punk</span></p>
+            </div>
+          </div>
+          <a href="https://open.spotify.com/track/3CsXEOVtvccHp6ohfQFnXe" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-2 rounded-full bg-white/10 hover:bg-[#1DB954] text-white hover:text-black font-semibold text-xs transition-all shrink-0 active:scale-95 shadow" title="Dengarkan di Spotify">
+            <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span class="hidden sm:inline" data-i18n="btn_listen_spotify">Putar</span>
+          </a>
+        </div>
+
       </div>
 
-      <div class="mt-10">
+      <!-- Full Official Playlist Embed Card -->
+      <div class="mt-14 pt-12 border-t border-brand-border/60">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-6 gap-4">
+          <div>
+            <h3 class="text-xl sm:text-2xl font-display font-bold text-white" data-i18n="full_playlist_title">
+              PLAYLIST LENGKAP SPOTIFY (114+ LAGU)
+            </h3>
+            <p class="text-xs sm:text-sm text-zinc-400 mt-1" data-i18n="full_playlist_desc">
+              Jelajahi seluruh katalog resmi musisi dan band yang mempercayakan produksinya di Bullsrecords.
+            </p>
+          </div>
+          <a href="https://open.spotify.com/playlist/5ZaratnXq1OY4j2BX5bkaq?si=5gZwUDRcQtuPo-6_Vd4iKg" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-[#1DB954] text-black font-bold text-xs uppercase tracking-wider hover:bg-[#1ed760] transition-all transform active:scale-95 shadow w-fit shrink-0">
+            <svg class="w-4 h-4 fill-black" viewBox="0 0 24 24"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+            <span data-i18n="portfolio_btn">Buka di Aplikasi Spotify</span>
+          </a>
+        </div>
+
+        <div class="rounded-3xl border border-brand-border bg-brand-card p-3 sm:p-5 shadow-2xl">
+          <iframe 
+            style="border-radius:18px" 
+            src="https://open.spotify.com/embed/playlist/5ZaratnXq1OY4j2BX5bkaq?utm_source=generator&theme=0" 
+            width="100%" 
+            height="380" 
+            frameBorder="0" 
+            allowfullscreen="" 
+            allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+            loading="lazy"
+            class="w-full shadow-inner">
+          </iframe>
+        </div>
+      </div>
+
+      <!-- Video Portfolio (DeadSquad) -->
+      <div class="mt-14 pt-12 border-t border-brand-border/60">
         <div class="mb-5">
           <p class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-2" data-i18n="portfolio_video_badge">Video Portofolio</p>
           <h3 class="text-xl sm:text-2xl font-display font-bold text-white">DeadSquad - “Horror Vision” Live in Taiwan</h3>
@@ -276,7 +538,8 @@
     </div>
   </section>
 
-  <!-- Services & Pricing Section -->
+
+<!-- Services & Pricing Section -->
   <section id="services" class="py-24 border-t border-brand-border">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
@@ -670,6 +933,29 @@
     lucide.createIcons();
     document.getElementById('year').textContent = new Date().getFullYear();
 
+        // Chart Tab Switcher (Top Hits vs New Coming)
+    function switchChartTab(tab) {
+      const topBtn = document.getElementById('chart-tab-top');
+      const newBtn = document.getElementById('chart-tab-new');
+      const topView = document.getElementById('chart-view-top');
+      const newView = document.getElementById('chart-view-new');
+
+      const activeBtnClass = "px-5 sm:px-7 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all bg-white text-black shadow-md flex items-center gap-2";
+      const inactiveBtnClass = "px-5 sm:px-7 py-2.5 rounded-full text-xs sm:text-sm font-bold transition-all text-zinc-400 hover:text-white flex items-center gap-2";
+
+      if (tab === 'top') {
+        topBtn.className = activeBtnClass;
+        newBtn.className = inactiveBtnClass;
+        topView.classList.remove('hidden');
+        newView.classList.add('hidden');
+      } else {
+        newBtn.className = activeBtnClass;
+        topBtn.className = inactiveBtnClass;
+        newView.classList.remove('hidden');
+        topView.classList.add('hidden');
+      }
+    }
+
     // Mobile Menu Toggle
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -701,6 +987,22 @@
         trust_turnaround: "Standar Turnaround Time",
         trust_revisions_val: "Gratis",
         trust_revisions: "Hingga 3x Siklus Revisi",
+                chart_badge: "Bullsrecords Discography Charts",
+        chart_title: "TANGGA LAGU & RILISAN RESMI",
+        chart_desc: "Karya-karya resmi pilihan yang di-mixing & di-mastering oleh Bullsrecords. Diputar jutaan kali di berbagai platform digital.",
+        tab_tophits: "Top Hits (Play Terbanyak)",
+        tab_newcoming: "New Coming (Rilisan Terbaru)",
+        btn_listen_spotify: "Putar",
+        full_playlist_title: "PLAYLIST LENGKAP SPOTIFY (114+ LAGU)",
+        full_playlist_desc: "Jelajahi seluruh katalog resmi musisi dan band yang mempercayakan produksinya di Bullsrecords.",
+                chart_badge: "Bullsrecords Discography Charts",
+        chart_title: "OFFICIAL CHARTS & RELEASES",
+        chart_desc: "Featured official releases mixed & mastered at Bullsrecords. Streamed millions of times across digital streaming platforms.",
+        tab_tophits: "Top Hits (Most Streamed)",
+        tab_newcoming: "New Coming (Fresh Releases)",
+        btn_listen_spotify: "Play",
+        full_playlist_title: "COMPLETE SPOTIFY PLAYLIST (114+ TRACKS)",
+        full_playlist_desc: "Explore all official releases from independent artists and bands mixed & mastered at Bullsrecords.",
         portfolio_badge: "Official Discography",
         portfolio_title: "PORTOFOLIO SPOTIFY",
         portfolio_desc: "Karya dan rilisan resmi yang telah melalui proses mixing & mastering profesional di Bullsrecords. Putar langsung dari playlist Spotify di bawah.",

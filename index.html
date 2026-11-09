@@ -983,7 +983,7 @@
         trust_turnaround: "Standar Turnaround Time",
         trust_revisions_val: "Gratis",
         trust_revisions: "Maksimal 2x Siklus Revisi",
-                chart_badge: "Bullsrecords Discography Charts",
+        chart_badge: "Bullsrecords Discography Charts",
         chart_title: "TANGGA LAGU & RILISAN RESMI",
         chart_desc: "Karya-karya resmi pilihan yang di-mixing & di-mastering oleh Bullsrecords. Diputar jutaan kali di berbagai platform digital.",
         tab_tophits: "Top Hits (Play Terbanyak)",
@@ -991,7 +991,7 @@
         btn_listen_spotify: "Putar",
         full_playlist_title: "PLAYLIST LENGKAP SPOTIFY (114+ LAGU)",
         full_playlist_desc: "Jelajahi seluruh katalog resmi musisi dan band yang mempercayakan produksinya di Bullsrecords.",
-                portfolio_badge: "Official Discography",
+        portfolio_badge: "Official Discography",
         portfolio_title: "PORTOFOLIO SPOTIFY",
         portfolio_desc: "Karya dan rilisan resmi yang telah melalui proses mixing & mastering profesional di Bullsrecords. Putar langsung dari playlist Spotify di bawah.",
         portfolio_btn: "Buka di Aplikasi Spotify",
@@ -1061,7 +1061,7 @@
         faq_q1: "Berapa lama waktu pengerjaan (turnaround time)?",
         faq_a1: "Untuk mastering single biasanya selesai dalam 1-2 hari kerja. Untuk full mixing & mastering single berkisar 3-5 hari kerja tergantung jumlah track multitrack.",
         faq_q2: "Bagaimana jika hasil belum sesuai ekspektasi saya?",
-        faq_a2: "Setiap paket sudah mencakup revisi gratis (2-3 kali revisi). Anda cukup menuliskan timecode (misal: \"di menit 01:23 vokal backing agak terlalu keras\") dan kami akan perbaiki segera.",
+        faq_a2: "Setiap paket sudah mencakup revisi gratis (maksimal 2 kali revisi). Anda cukup menuliskan timecode (misal: \"di menit 01:23 vokal backing agak terlalu keras\") dan kami akan perbaiki segera.",
         faq_q3: "File apa saja yang saya dapatkan setelah selesai?",
         faq_a3: "Anda akan mendapatkan folder zip berisi: High-Resolution Master (WAV 24-bit 48kHz/96kHz), Streaming Ready Master (WAV 16-bit 44.1kHz -14 LUFS), MP3 320kbps, dan Instrumental Master (untuk live performance / backing track).",
         faq_q4: "Metode pembayaran apa saja yang diterima?",
@@ -1090,6 +1090,14 @@
         trust_turnaround: "Standard Turnaround Time",
         trust_revisions_val: "Free",
         trust_revisions: "Max 2x Revision Rounds",
+        chart_badge: "Bullsrecords Discography Charts",
+        chart_title: "OFFICIAL CHARTS & RELEASES",
+        chart_desc: "Featured official releases mixed & mastered at Bullsrecords, streamed across digital platforms.",
+        tab_tophits: "Top Hits (Most Streamed)",
+        tab_newcoming: "New Coming (Fresh Releases)",
+        btn_listen_spotify: "Play",
+        full_playlist_title: "COMPLETE SPOTIFY PLAYLIST (114+ TRACKS)",
+        full_playlist_desc: "Explore all official releases from independent artists and bands mixed & mastered at Bullsrecords.",
         portfolio_badge: "Official Discography",
         portfolio_title: "SPOTIFY PORTFOLIO",
         portfolio_desc: "Official releases mixed and mastered at Bullsrecords. Stream directly from our official Spotify playlist below.",
@@ -1317,7 +1325,8 @@
       e.preventDefault();
       const name = document.getElementById('form-name').value;
       const title = document.getElementById('form-title').value;
-      const pkg = document.getElementById('form-package').value;
+      const selectPkg = document.getElementById('form-package');
+      const pkg = selectPkg ? selectPkg.options[selectPkg.selectedIndex].text : document.getElementById('form-package').value;
       const genre = document.getElementById('form-genre').value || '-';
       const link = document.getElementById('form-link').value || '-';
       const notes = document.getElementById('form-notes').value || '-';

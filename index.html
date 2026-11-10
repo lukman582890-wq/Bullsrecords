@@ -80,9 +80,13 @@
         </div>
       </a>
 
-      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-zinc-400">
+      <nav class="hidden md:flex items-center gap-7 text-sm font-medium text-zinc-400">
         <a href="#portfolio" class="hover:text-white transition-colors" data-i18n="nav_portfolio">Portofolio</a>
         <a href="#services" class="hover:text-white transition-colors" data-i18n="nav_services">Layanan & Harga</a>
+        <a href="#software" class="hover:text-white transition-colors flex items-center gap-1.5">
+          <span data-i18n="nav_software">Software</span>
+          <span class="px-1.5 py-0.2 rounded-full text-[9px] font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">APK</span>
+        </a>
         <a href="#guidelines" class="hover:text-white transition-colors" data-i18n="nav_guidelines">Panduan Kirim File</a>
         <a href="#gear" class="hover:text-white transition-colors" data-i18n="nav_gear">Gear & Tech</a>
         <a href="#faq" class="hover:text-white transition-colors" data-i18n="nav_faq">FAQ</a>
@@ -113,6 +117,10 @@
     <div id="mobile-menu" class="hidden md:hidden border-b border-brand-border bg-[#0a0a0a] px-4 pt-3 pb-6 space-y-3">
       <a href="#portfolio" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_portfolio">Portofolio</a>
       <a href="#services" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_services">Layanan & Harga</a>
+      <a href="#software" class="flex items-center justify-between text-zinc-300 py-2 hover:text-white">
+        <span data-i18n="nav_software">Software</span>
+        <span class="px-2 py-0.5 rounded-full text-[10px] font-bold tracking-wider uppercase bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PRO</span>
+      </a>
       <a href="#guidelines" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_guidelines">Panduan Kirim File</a>
       <a href="#gear" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_gear">Gear & Tech</a>
       <a href="#faq" class="block text-zinc-300 py-2 hover:text-white" data-i18n="nav_faq">FAQ</a>
@@ -662,6 +670,222 @@
     </div>
   </section>
 
+  <!-- Software / DroidNAm Stage Pro Section -->
+  <section id="software" class="py-24 border-t border-brand-border bg-gradient-to-b from-brand-black via-[#0b0e12] to-brand-black relative overflow-hidden">
+    <!-- Subtle Background Ambient Glow -->
+    <div class="absolute top-1/2 -left-20 -translate-y-1/2 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-10 -right-20 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 text-xs tracking-wider uppercase text-emerald-400 mb-3.5 shadow-sm">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span data-i18n="software_badge">Audio Tech Innovation • Android APK</span>
+        </div>
+        <h2 class="text-3xl sm:text-5xl font-display font-extrabold text-white tracking-tight" data-i18n="software_title">
+          DROIDNAM STAGE PRO
+        </h2>
+        <p class="text-base sm:text-lg font-medium text-emerald-400 mt-2" data-i18n="software_subtitle">
+          Neural Amp Modeler & IR Real-Time Guitar Rig untuk Android
+        </p>
+        <p class="text-xs sm:text-sm text-zinc-400 mt-3.5 leading-relaxed" data-i18n="software_desc">
+          Bawa suara amplifier tabung analog legendaris dan cabinet IR studio kelas dunia langsung dari HP Android Anda. Tidak perlu lagi membawa laptop atau multi-efek besar dan berat saat latihan atau panggung — cukup colok gitar via audio interface USB dan nikmati dinamika suara organik tanpa jeda.
+        </p>
+      </div>
+
+      <!-- Main Showcase Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+        
+        <!-- Left: Studio Visual Mockup Frame -->
+        <div class="lg:col-span-6 space-y-4">
+          <div class="relative group rounded-3xl border border-white/15 bg-zinc-950 p-2 sm:p-3 shadow-2xl transition-all hover:border-emerald-500/50">
+            <!-- Window Top Bar -->
+            <div class="flex items-center justify-between px-3 py-2 border-b border-white/10 text-xs text-zinc-400 font-mono mb-2">
+              <div class="flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-red-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-yellow-500/80"></span>
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                <span class="text-[11px] text-zinc-400 font-sans font-semibold ml-2">DroidNAm v6.0.1 Universal</span>
+              </div>
+              <span class="px-2 py-0.5 rounded text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">STAGE RIG ACTIVE</span>
+            </div>
+
+            <!-- Screenshot UI -->
+            <div class="relative overflow-hidden rounded-2xl bg-black border border-white/10">
+              <img 
+                src="assets/droidnam-v5-gui.png" 
+                alt="DroidNAm Stage Pro Interface" 
+                class="w-full h-auto object-cover transform group-hover:scale-[1.01] transition-transform duration-500"
+                loading="lazy"
+              >
+              <!-- Floating Highlights inside Mockup -->
+              <div class="absolute bottom-3 left-3 right-3 flex items-center justify-between gap-2 p-2.5 rounded-xl bg-black/85 backdrop-blur-md border border-white/15 text-[11px]">
+                <div class="flex items-center gap-1.5 text-zinc-300">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                  <span class="font-bold text-white">48 kHz Oboe DSP</span>
+                </div>
+                <div class="text-zinc-400 font-mono text-[10px]">Ultra-Low Latency • Anti-XRun</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Feature Pills beneath mockup -->
+          <div class="grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="p-2.5 rounded-xl border border-brand-border bg-brand-card">
+              <div class="font-bold text-white text-[11px] sm:text-xs">4-Slot DSP</div>
+              <div class="text-[9px] sm:text-[10px] text-zinc-400 mt-0.5">NAM + IR Loader</div>
+            </div>
+            <div class="p-2.5 rounded-xl border border-brand-border bg-brand-card">
+              <div class="font-bold text-emerald-400 text-[11px] sm:text-xs">Lush Reverb</div>
+              <div class="text-[9px] sm:text-[10px] text-zinc-400 mt-0.5">Hall • Cloud • Shimmer</div>
+            </div>
+            <div class="p-2.5 rounded-xl border border-brand-border bg-brand-card">
+              <div class="font-bold text-white text-[11px] sm:text-xs">MIDI Learn</div>
+              <div class="text-[9px] sm:text-[10px] text-zinc-400 mt-0.5">USB & BT Footboard</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Feature Cards & Direct Lynk.id Checkout -->
+        <div class="lg:col-span-6 space-y-6">
+          
+          <!-- 6-Grid Feature Specs -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            
+            <div class="p-3.5 rounded-2xl border border-brand-border bg-brand-card hover:border-zinc-500 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <i data-lucide="zap" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <h4 class="text-xs sm:text-sm font-bold text-white" data-i18n="software_f1_title">Ultra-Low Latency DSP</h4>
+              </div>
+              <p class="text-[11px] sm:text-xs text-zinc-400 leading-relaxed" data-i18n="software_f1_desc">
+                Ditenagai C++20 native DSP & Google Oboe 48 kHz exclusive audio stream untuk petikan instan bebas jeda.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl border border-brand-border bg-brand-card hover:border-zinc-500 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <i data-lucide="layers" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <h4 class="text-xs sm:text-sm font-bold text-white" data-i18n="software_f2_title">4-Slot Modular Stage</h4>
+              </div>
+              <p class="text-[11px] sm:text-xs text-zinc-400 leading-relaxed" data-i18n="software_f2_desc">
+                Rangkai bebas hingga 4 modul sekaligus: NAM Amp, Cabinet IR, Overdrive, dan Preamp.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl border border-brand-border bg-brand-card hover:border-zinc-500 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <i data-lucide="sliders" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <h4 class="text-xs sm:text-sm font-bold text-white" data-i18n="software_f3_title">Studio FX Suite</h4>
+              </div>
+              <p class="text-[11px] sm:text-xs text-zinc-400 leading-relaxed" data-i18n="software_f3_desc">
+                Noise Gate cepat, 3-Band EQ Tone Stack, Delay stereo, dan Lush Hall/Shimmer Reverb.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl border border-brand-border bg-brand-card hover:border-zinc-500 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <i data-lucide="folder-down" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <h4 class="text-xs sm:text-sm font-bold text-white" data-i18n="software_f4_title">Muat File Kustom</h4>
+              </div>
+              <p class="text-[11px] sm:text-xs text-zinc-400 leading-relaxed" data-i18n="software_f4_desc">
+                Muat file .nam dan .wav IR favoritmu sendiri langsung dari memori HP tanpa batasan.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl border border-brand-border bg-brand-card hover:border-zinc-500 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <i data-lucide="footprints" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <h4 class="text-xs sm:text-sm font-bold text-white" data-i18n="software_f5_title">Dukungan MIDI Controller</h4>
+              </div>
+              <p class="text-[11px] sm:text-xs text-zinc-400 leading-relaxed" data-i18n="software_f5_desc">
+                Ganti preset dan kontrol parameter live di panggung dengan pedalboard MIDI USB atau Bluetooth.
+              </p>
+            </div>
+
+            <div class="p-3.5 rounded-2xl border border-brand-border bg-brand-card hover:border-zinc-500 transition-all">
+              <div class="flex items-center gap-2 mb-1.5">
+                <i data-lucide="cpu" class="w-4 h-4 text-emerald-400 shrink-0"></i>
+                <h4 class="text-xs sm:text-sm font-bold text-white" data-i18n="software_f6_title">Kompatibilitas Universal</h4>
+              </div>
+              <p class="text-[11px] sm:text-xs text-zinc-400 leading-relaxed" data-i18n="software_f6_desc">
+                Optimal untuk Android ARMv8 64-bit, ARMv7 32-bit, hingga x86_64 (Snapdragon, MediaTek, Exynos).
+              </p>
+            </div>
+
+          </div>
+
+          <!-- Checkout Box Card -->
+          <div class="p-5 sm:p-7 rounded-3xl border-2 border-emerald-500/40 bg-gradient-to-b from-zinc-900 via-brand-card to-zinc-950 shadow-2xl relative overflow-hidden">
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-5 border-b border-white/10">
+              <div>
+                <span class="text-[10px] font-mono uppercase tracking-wider text-emerald-400 font-semibold" data-i18n="software_price_sub">
+                  Akses APK Penuh • Sekali Beli Selamanya
+                </span>
+                <div class="flex items-baseline gap-2 mt-1">
+                  <span class="text-3xl sm:text-4xl font-extrabold text-white font-display" id="price-droidnam" data-i18n="software_price">
+                    Rp 45.500
+                  </span>
+                  <span class="text-xs text-zinc-500 line-through">Rp 150.000</span>
+                  <span class="px-2 py-0.5 rounded-full text-[10px] font-bold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">PROMO</span>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-2 text-xs text-zinc-400">
+                <i data-lucide="shield-check" class="w-5 h-5 text-emerald-400 shrink-0"></i>
+                <span class="text-[11px] leading-tight" data-i18n="software_instant_delivery">Pengiriman Instan Otomatis oleh Lynk.id</span>
+              </div>
+            </div>
+
+            <!-- CTA Buttons -->
+            <div class="pt-5 space-y-3">
+              <a 
+                href="https://lynk.id/luks666/4prdz0dozlnk/checkout" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full py-4 px-6 rounded-full bg-emerald-500 hover:bg-emerald-400 text-black font-display font-extrabold text-sm uppercase tracking-wider transition-all transform active:scale-95 shadow-lg flex items-center justify-center gap-2 group text-center"
+              >
+                <i data-lucide="download" class="w-4 h-4 stroke-[2.5] group-hover:translate-y-0.5 transition-transform"></i>
+                <span data-i18n="software_cta_buy">Beli & Download APK di Lynk.id</span>
+              </a>
+
+              <a 
+                href="https://lynk.id/luks666/4prdz0dozlnk" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="w-full py-2.5 px-6 rounded-full border border-white/15 hover:border-white/40 bg-white/5 hover:bg-white/10 text-zinc-300 hover:text-white font-semibold text-xs tracking-wider transition-all flex items-center justify-center gap-2 text-center"
+              >
+                <span data-i18n="software_cta_detail">Lihat Halaman Produk di Lynk.id</span>
+                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+              </a>
+            </div>
+
+            <!-- Trust Badges Under CTA -->
+            <div class="mt-4 pt-4 border-t border-white/10 flex flex-wrap items-center justify-between gap-2 text-[10px] text-zinc-400">
+              <span class="flex items-center gap-1">
+                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
+                <span data-i18n="software_trust_1">Bayar via QRIS / E-Wallet / VA</span>
+              </span>
+              <span class="flex items-center gap-1">
+                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
+                <span data-i18n="software_trust_2">File Dikirim Langsung ke Email</span>
+              </span>
+              <span class="flex items-center gap-1">
+                <i data-lucide="check" class="w-3 h-3 text-emerald-400"></i>
+                <span data-i18n="software_trust_3">APK Bersih & Terverifikasi</span>
+              </span>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
   <!-- Audio Submission Guidelines -->
   <section id="guidelines" class="py-24 border-t border-brand-border bg-zinc-950/40">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1068,7 +1292,32 @@
         faq_a4: "Menerima Transfer Bank (BCA, Mandiri), QRIS (GoPay, OVO, ShopeePay, Dana), dan PayPal untuk klien internasional.",
         footer_subtitle: "Audio Mixing & Mastering Studio",
         footer_rights: "Hak cipta dilindungi.",
-        wa_floating_text: "Halo Bullsrecords, saya mau konsultasi jasa mixing mastering"
+        wa_floating_text: "Halo Bullsrecords, saya mau konsultasi jasa mixing mastering",
+        nav_software: "Software",
+        software_badge: "Audio Tech Innovation • Android APK",
+        software_title: "DROIDNAM STAGE PRO",
+        software_subtitle: "Neural Amp Modeler & IR Real-Time Guitar Rig untuk Android",
+        software_desc: "Bawa suara amplifier tabung analog legendaris dan cabinet IR studio kelas dunia langsung dari HP Android Anda. Tidak perlu lagi membawa laptop atau multi-efek besar dan berat saat latihan atau panggung — cukup colok gitar via audio interface USB dan nikmati dinamika suara organik tanpa jeda.",
+        software_f1_title: "Ultra-Low Latency DSP",
+        software_f1_desc: "Ditenagai C++20 native DSP & Google Oboe 48 kHz exclusive audio stream untuk petikan instan bebas jeda.",
+        software_f2_title: "4-Slot Modular Stage",
+        software_f2_desc: "Rangkai bebas hingga 4 modul sekaligus: NAM Amp, Cabinet IR, Overdrive, dan Preamp.",
+        software_f3_title: "Studio FX Suite",
+        software_f3_desc: "Noise Gate cepat, 3-Band EQ Tone Stack, Delay stereo, dan Lush Hall/Shimmer Reverb.",
+        software_f4_title: "Muat File Kustom",
+        software_f4_desc: "Muat file .nam dan .wav IR favoritmu sendiri langsung dari memori HP tanpa batasan.",
+        software_f5_title: "Dukungan MIDI Controller",
+        software_f5_desc: "Ganti preset dan kontrol parameter live di panggung dengan pedalboard MIDI USB atau Bluetooth.",
+        software_f6_title: "Kompatibilitas Universal",
+        software_f6_desc: "Optimal untuk Android ARMv8 64-bit, ARMv7 32-bit, hingga x86_64 (Snapdragon, MediaTek, Exynos).",
+        software_price: "Rp 45.500",
+        software_price_sub: "Akses APK Penuh • Sekali Beli Selamanya",
+        software_cta_buy: "Beli & Download APK di Lynk.id",
+        software_cta_detail: "Lihat Halaman Produk di Lynk.id",
+        software_trust_1: "Bayar via QRIS / E-Wallet / VA",
+        software_trust_2: "File Dikirim Langsung ke Email",
+        software_trust_3: "APK Bersih & Terverifikasi",
+        software_instant_delivery: "Pengiriman Instan Otomatis oleh Lynk.id"
       },
       en: {
         page_title: "Bullsrecords | Professional Audio Mixing & Mastering Studio",
@@ -1148,6 +1397,31 @@
         order_badge: "Get Started",
         order_title: "AUDIO ORDER & INQUIRY FORM",
         order_desc: "Fill in your project details below. Click submit to open a direct WhatsApp chat with our audio engineer.",
+        nav_software: "Software",
+        software_badge: "Audio Tech Innovation • Android APK",
+        software_title: "DROIDNAM STAGE PRO",
+        software_subtitle: "Neural Amp Modeler & IR Real-Time Guitar Rig for Android",
+        software_desc: "Carry legendary tube amp tones and world-class studio cabinet IRs directly from your Android phone. No bulky laptops or heavy multi-FX rigs needed for rehearsals or stage gigs — just plug your guitar via a USB audio interface and experience organic analog touch response with ultra-low latency.",
+        software_f1_title: "Ultra-Low Latency DSP",
+        software_f1_desc: "Powered by C++20 native DSP & Google Oboe 48 kHz exclusive audio stream for instant pick response without lag.",
+        software_f2_title: "4-Slot Modular Stage",
+        software_f2_desc: "Freely chain up to 4 DSP blocks: NAM Amp captures, Cabinet IRs, Overdrive, and Preamp.",
+        software_f3_title: "Studio FX Suite",
+        software_f3_desc: "Ultra-fast Noise Gate, 3-Band EQ Tone Stack, stereo Delay, and Lush Hall/Shimmer Reverb.",
+        software_f4_title: "Custom File Loading",
+        software_f4_desc: "Load your own favorite .nam models and .wav IR files directly from phone storage.",
+        software_f5_title: "MIDI Foot Controller Support",
+        software_f5_desc: "Switch stage presets and control live parameters using USB or Bluetooth MIDI pedalboards.",
+        software_f6_title: "Universal Processor Optimization",
+        software_f6_desc: "Optimized for Android ARMv8 64-bit, ARMv7 32-bit, and x86_64 (Snapdragon, MediaTek, Exynos).",
+        software_price: "~$3.00 USD",
+        software_price_sub: "Full APK Access • One-time Purchase",
+        software_cta_buy: "Buy & Download APK on Lynk.id",
+        software_cta_detail: "View Product Details on Lynk.id",
+        software_trust_1: "Pay via QRIS / E-Wallet / Bank",
+        software_trust_2: "Instant File Delivery to Email",
+        software_trust_3: "Clean & Verified Android APK",
+        software_instant_delivery: "Instant Automated Delivery by Lynk.id",
         label_name: "Name / Artist / Band",
         placeholder_name: "e.g. Dave / The Sounds",
         label_title: "Song / Track Title",
